@@ -274,14 +274,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (urlParams.get('success') === 'true') {
         mainApp.style.display = 'none';
         successScreen.style.display = 'flex';
-        // Limpa o rascunho após o envio bem-sucedido
+        
+        // Faz backup das respostas antes de limpar, para que as exportações funcionem
+        const currentDraft = localStorage.getItem('regenere_briefing_draft');
+        if (currentDraft) {
+            localStorage.setItem('regenere_briefing_completed_backup', currentDraft);
+        }
+        
+        // Limpa o rascunho ativo após o envio bem-sucedido
         localStorage.removeItem('regenere_briefing_draft');
     }
 
     // --- 5. EXPORTAÇÃO E COMPARTILHAMENTO DAS RESPOSTAS ---
     // Compila os dados do briefing em formato legível de texto (Markdown)
     function compileResponsesToText() {
-        const draft = localStorage.getItem('regenere_briefing_draft');
+        const draft = localStorage.getItem('regenere_briefing_draft') || localStorage.getItem('regenere_briefing_completed_backup');
         let data = {};
         
         if (draft) {
@@ -365,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Botão de Compartilhar no WhatsApp
     btnWhatsappShare.addEventListener('click', () => {
         // Reduz o tamanho da mensagem para caber na URL do WhatsApp
-        const draft = localStorage.getItem('regenere_briefing_draft');
+        const draft = localStorage.getItem('regenere_briefing_draft') || localStorage.getItem('regenere_briefing_completed_backup');
         let data = {};
         if (draft) data = JSON.parse(draft);
 
@@ -377,12 +384,12 @@ document.addEventListener('DOMContentLoaded', () => {
         text += `*Cliente:* ${clientName}\n`;
         text += `*E-mail:* ${clientEmail}\n`;
         text += `*Prazo sugerido:* ${deadline}\n\n`;
-        text += `As respostas completas foram salvas e enviadas por e-mail para você! Você também pode baixar o relatório em TXT ou copiar o sumário completo diretamente na tela final do formulário.\n\n`;
+        text += `As respostas completas foram salvas e enviadas! Você também pode baixar o relatório em TXT ou copiar o sumário completo diretamente na tela final do formulário.\n\n`;
         text += `Aguardo os próximos passos! 😊`;
 
         const encodedText = encodeURIComponent(text);
-        // Tenta abrir whatsapp no celular, ou web whatsapp no PC
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
+        // Abre o WhatsApp enviando a mensagem diretamente para o número do Carlos
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=5538988450377&text=${encodedText}`;
         window.open(whatsappUrl, '_blank');
     });
 
