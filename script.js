@@ -18,13 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileStepName = document.getElementById('mobile-step-name');
     const successScreen = document.getElementById('success-screen');
     const mainApp = document.getElementById('briefing-app');
-    
-    // Dev Panel Elements
-    const devConfigToggle = document.getElementById('dev-config-toggle');
-    const devConfigPanel = document.getElementById('dev-config-panel');
-    const devConfigClose = document.getElementById('dev-config-close');
-    const devEmailInput = document.getElementById('dev_email');
-    const btnSaveDevConfig = document.getElementById('btn-save-dev-config');
 
     // Success Screen Buttons
     const btnDownloadJson = document.getElementById('btn-download-json');
@@ -57,8 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('regenere_dev_email', targetEmail);
     }
     
-    // Inicializa campos do painel de dev
-    devEmailInput.value = targetEmail === DEFAULT_DEV_EMAIL ? '' : targetEmail;
     updateFormAction(targetEmail);
 
     // Configura o redirecionamento pós-envio do FormSubmit.co
@@ -407,41 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    devConfigToggle.addEventListener('click', () => {
-        devConfigPanel.style.display = devConfigPanel.style.display === 'none' ? 'block' : 'none';
-    });
 
-    devConfigClose.addEventListener('click', () => {
-        devConfigPanel.style.display = 'none';
-    });
-
-    btnSaveDevConfig.addEventListener('click', () => {
-        const newEmail = devEmailInput.value.trim();
-        if (newEmail && validateEmail(newEmail)) {
-            localStorage.setItem('regenere_dev_email', newEmail);
-            updateFormAction(newEmail);
-            
-            // Sucesso visual
-            btnSaveDevConfig.innerHTML = `<i class="fa-solid fa-check"></i> Salvo com Sucesso!`;
-            btnSaveDevConfig.style.backgroundColor = 'var(--color-success)';
-            
-            // Atualiza a URL sem recarregar a página para incluir o novo e-mail
-            const newUrl = window.location.origin + window.location.pathname + `?email=${newEmail}`;
-            window.history.pushState({ path: newUrl }, '', newUrl);
-
-            setTimeout(() => {
-                btnSaveDevConfig.innerHTML = `<i class="fa-solid fa-check"></i> Salvar Configuração`;
-                btnSaveDevConfig.style.backgroundColor = '';
-                devConfigPanel.style.display = 'none';
-            }, 1500);
-        } else {
-            alert('Por favor, insira um e-mail válido para receber as respostas.');
-        }
-    });
-
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
 
     // Inicialização do Passo 1
     showStep(1);
