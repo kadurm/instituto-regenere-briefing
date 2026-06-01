@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. CONFIGURAÇÃO DE E-MAIL E URL ---
     // E-mail padrão do Carlos (se não fornecido na URL ou painel)
-    const DEFAULT_DEV_EMAIL = 'seu-email-aqui@dominio.com';
+    const DEFAULT_DEV_EMAIL = 'carlosermenezes@gmail.com';
     
     // Recupera o email da URL (?email=exemplo@dominio.com ou ?to=exemplo@dominio.com)
     const urlParams = new URLSearchParams(window.location.search);
