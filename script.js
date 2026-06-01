@@ -37,12 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Nomes legíveis dos passos para exibição no Mobile
     const stepNames = {
-        1: "Negócio B2B & B2C",
+        1: "Sobre o Instituto",
         2: "Nuances Clínicas",
-        3: "Concorrência",
-        4: "Agenda & Conversão",
-        5: "Tom Clínico & Visual",
-        6: "Lançamento em Fases"
+        3: "Diferenciais",
+        4: "Estrutura & Leads"
     };
 
     // --- 1. CONFIGURAÇÃO DE E-MAIL E URL ---
