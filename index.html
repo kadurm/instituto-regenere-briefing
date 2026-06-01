@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing de Criação do Site - Instituto Regenere</title>
+    
+    <!-- Meta Tags para SEO & Compartilhamento -->
+    <meta name="description" content="Formulário interativo de briefing para o desenvolvimento do site institucional do Instituto Regenere. Defina objetivos, público-alvo, funcionalidades e preferências visuais de forma simples e premium.">
+    <meta name="author" content="Carlos Eduardo">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para ícones premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background decorativo com formas orgânicas fluidas -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Container Principal do App -->
+    <main class="app-container" id="briefing-app">
+        
+        <!-- Painel Lateral - Identidade & Progresso (Desktop) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-wrapper">
+                    <!-- O logo será carregado via CSS ou HTML a partir do arquivo existente -->
+                    <img src="Logo regenere.png" alt="Instituto Regenere Logo" class="brand-logo">
+                </div>
+                <h1 class="sidebar-title">Briefing do Projeto</h1>
+                <p class="sidebar-subtitle">Site Institucional</p>
+            </div>
+            
+            <!-- Indicador de Passos -->
+            <nav class="steps-nav">
+                <ul class="steps-list" id="steps-indicator">
+                    <li class="step-item active" data-step="1">
+                        <span class="step-num">01</span>
+                        <div class="step-text">
+                            <span class="step-title">Identificação</span>
+                            <span class="step-desc">Seus dados de contato</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="2">
+                        <span class="step-num">02</span>
+                        <div class="step-text">
+                            <span class="step-title">O Instituto</span>
+                            <span class="step-desc">História e diferenciais</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="3">
+                        <span class="step-num">03</span>
+                        <div class="step-text">
+                            <span class="step-title">Objetivos</span>
+                            <span class="step-desc">O que o site deve fazer</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="4">
+                        <span class="step-num">04</span>
+                        <div class="step-text">
+                            <span class="step-title">Funcionalidades</span>
+                            <span class="step-desc">Recursos necessários</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="5">
+                        <span class="step-num">05</span>
+                        <div class="step-text">
+                            <span class="step-title">Visual & Conteúdo</span>
+                            <span class="step-desc">Cores, referências e textos</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="6">
+                        <span class="step-num">06</span>
+                        <div class="step-text">
+                            <span class="step-title">Prazos & Envio</span>
+                            <span class="step-desc">Expectativas e finalização</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Progresso Geral -->
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>Progresso de Preenchimento</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+                <div class="autosave-tag">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Salvamento automático ativo</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Área Principal do Formulário -->
+        <section class="form-area">
+            
+            <!-- Barra de Progresso Mobile -->
+            <div class="mobile-progress">
+                <div class="mobile-logo-bar">
+                    <img src="Logo regenere.png" alt="Instituto Regenere" class="mobile-logo">
+                    <div class="mobile-title-group">
+                        <h2>Instituto Regenere</h2>
+                        <p>Briefing do Site</p>
+                    </div>
+                </div>
+                <div class="mobile-bar-outer">
+                    <div class="mobile-bar-inner" id="mobile-progress-bar" style="width: 16.66%;"></div>
+                </div>
+                <div class="mobile-step-indicator">
+                    Passo <span id="mobile-current-step">1</span> de 6: <strong id="mobile-step-name">Identificação</strong>
+                </div>
+            </div>
+
+            <!-- O Formulário de fato -->
+            <form id="briefing-form" action="https://formsubmit.co/your-email-here@domain.com" method="POST">
+                <!-- Configurações do FormSubmit -->
+                <input type="hidden" name="_subject" value="Novo Briefing de Site - Instituto Regenere!">
+                <input type="hidden" name="_next" value=""> <!-- Redirecionamento configurado via JS -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <!-- PASSO 1: Identificação -->
+                <div class="form-step active-step" data-step="1" id="step-1-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-address-card"></i></div>
+                        <h2>Olá! Seja muito bem-vindo(a).</h2>
+                        <p>Para iniciarmos o desenvolvimento do novo site institucional do <strong>Instituto Regenere</strong>, precisamos alinhar todos os detalhes, expectativas e requisitos. Este briefing guiará nossa criação.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label for="client_name">Seu Nome Completo</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="client_name" name="Nome do Cliente" placeholder="Ex: Dra. Ana Silva" required autocomplete="name">
+                            </div>
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-control required">
+                                <label for="client_email">E-mail de Contato</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="client_email" name="E-mail" placeholder="Ex: contato@institutoregenere.com.br" required autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="input-control required">
+                                <label for="client_whatsapp">WhatsApp / Telefone</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <input type="tel" id="client_whatsapp" name="WhatsApp" placeholder="Ex: (11) 99999-9999" required autocomplete="tel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="client_role">Cargo / Especialidade no Instituto</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-stethoscope"></i>
+                                <input type="text" id="client_role" name="Cargo/Função" placeholder="Ex: Diretora Médica / Terapeuta / Administradora">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 2: O Instituto -->
+                <div class="form-step" data-step="2" id="step-2-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h2>Sobre o Instituto Regenere</h2>
+                        <p>Ajude-nos a compreender a essência do Instituto. O que faz dele único e como ele se posiciona no mercado?</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label for="inst_mission">Qual é a principal missão e os valores do Instituto Regenere?</label>
+                            <textarea id="inst_mission" name="Missão e Valores" rows="4" placeholder="Descreva brevemente o propósito do instituto, seus valores éticos e sua visão de saúde/bem-estar..." required></textarea>
+                        </div>
+
+                        <div class="input-control required">
+                            <label for="inst_services">Quais são as principais especialidades, terapias ou serviços oferecidos?</label>
+                            <textarea id="inst_services" name="Especialidades e Serviços" rows="4" placeholder="Ex: Psicologia integrativa, fisioterapia, medicina regenerativa, acupuntura, yoga, cursos..." required></textarea>
+                            <span class="helper-text">Liste os principais pilares de atuação que deverão ter destaque no site.</span>
+                        </div>
+
+                        <div class="input-control required">
+                            <label>Quem é o público-alvo / paciente ideal do Instituto?</label>
+                            <div class="custom-checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Publico Alvo[]" value="Pessoas buscando bem-estar e prevenção">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Bem-estar e Prevenção</strong>
+                                        Pessoas focadas em estilo de vida saudável
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Publico Alvo[]" value="Pacientes com dores crônicas ou patologias específicas">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Pacientes Clínicos</strong>
+                                        Buscando tratamentos específicos e reabilitação
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Publico Alvo[]" value="Profissionais de saúde interessados em cursos/formação">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Profissionais de Saúde</strong>
+                                        Buscando cursos, palestras e mentorias do Instituto
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Publico Alvo[]" value="Empresas em busca de programas de saúde corporativa">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Corporativo</strong>
+                                        Empresas contratando saúde ocupacional e bem-estar
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="inst_differentials">O que diferencia o Instituto Regenere de outras clínicas ou centros similares?</label>
+                            <textarea id="inst_differentials" name="Diferenciais" rows="3" placeholder="Ex: Atendimento humanizado integrativo, equipe multidisciplinar integrada, infraestrutura diferenciada, base científica..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 3: Objetivos do Novo Site -->
+                <div class="form-step" data-step="3" id="step-3-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h2>Objetivos e Seções do Site</h2>
+                        <p>O que o site precisa alcançar estrategicamente e quais páginas estruturais você visualiza para ele?</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label>Qual é o objetivo principal do novo site? <small>(Selecione até 2)</small></label>
+                            <div class="custom-radio-group">
+                                <label class="radio-card">
+                                    <input type="checkbox" name="Objetivo Principal[]" value="Atrair novos pacientes e gerar agendamentos">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-calendar-check"></i>
+                                        <span>Captar novos pacientes e facilitar agendamentos</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="Objetivo Principal[]" value="Posicionamento de marca e autoridade científica">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-award"></i>
+                                        <span>Fortalecer autoridade, credibilidade e marca</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="Objetivo Principal[]" value="Educar e engajar através de blog, artigos e notícias">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-newspaper"></i>
+                                        <span>Publicar artigos informativos (Blog) e educar pacientes</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="checkbox" name="Objetivo Principal[]" value="Divulgar e vender cursos, eventos e workshops">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Promover treinamentos, palestras e cursos</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control required">
+                            <label>Quais páginas/seções você considera ESSENCIAIS no site?</label>
+                            <div class="tag-selector-grid">
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Home (Página Inicial)" checked disabled>
+                                    <span>Página Inicial (Home)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Quem Somos / O Instituto" checked>
+                                    <span>Quem Somos (O Instituto)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Especialidades / Tratamentos" checked>
+                                    <span>Especialidades / Tratamentos</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Corpo Clínico / Equipe" checked>
+                                    <span>Corpo Clínico / Equipe</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Blog / Artigos Informativos">
+                                    <span>Blog / Artigos</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Cursos, Eventos e Workshops">
+                                    <span>Cursos / Palestras</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Depoimentos de Pacientes / Casos de Sucesso">
+                                    <span>Depoimentos / Avaliações</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Fale Conosco / Contatos" checked>
+                                    <span>Fale Conosco / Contato</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Secoes Essenciais[]" value="Perguntas Frequentes (FAQ)">
+                                    <span>Dúvidas Frequentes (FAQ)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="inst_references">Existem sites de referência que você admira? (Visual ou funcionalmente)</label>
+                            <textarea id="inst_references" name="Sites de Referência" rows="3" placeholder="Insira links ou nomes de sites que você gosta e explique o que lhe atrai neles (ex: o layout limpo, a facilidade de agendamento, as fotos, etc.)."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 4: Recursos & Funcionalidades -->
+                <div class="form-step" data-step="4" id="step-4-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h2>Recursos e Integrações</h2>
+                        <p>Quais ferramentas e integrações técnicas devemos embutir no site para melhorar a rotina do Instituto e a experiência do usuário?</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label>Integrações e Funcionalidades Desejadas</label>
+                            <div class="custom-checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Botão de WhatsApp Flutuante" checked>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Botão de WhatsApp Direto</strong>
+                                        Flutuante em todas as telas para contato imediato
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Integração com Sistema de Agendamento Online">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Agendamento Online Integrado</strong>
+                                        Link para Doctoralia, Amplimed ou outro sistema próprio
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Formulário de Contato e Pré-Agendamento">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Formulários de Lead</strong>
+                                        Para pré-triagem ou dúvidas que chegam direto no e-mail
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Mapa do Google interativo">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Localização / Mapa Interativo</strong>
+                                        Google Maps integrado para guiar pacientes ao local
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Área de Depoimentos integrando avaliações do Google">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Avaliações do Google (My Business)</strong>
+                                        Exibição automatizada ou curadoria de depoimentos reais
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Recursos[]" value="Captação de E-mails / Newsletter">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Newsletter / Captação de E-mails</strong>
+                                        Integrar com RD Station, Mailchimp ou similar para envios
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="inst_systems">O Instituto já utiliza algum sistema de gestão de prontuários ou agenda online?</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-laptop-medical"></i>
+                                <input type="text" id="inst_systems" name="Sistemas Utilizados" placeholder="Ex: Doctoralia, Amplimed, Shosp, Clinicorp, nenhum...">
+                            </div>
+                            <span class="helper-text">Se sim, informe para estudarmos a melhor forma de integração do agendamento.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 5: Identidade Visual e Conteúdo -->
+                <div class="form-step" data-step="5" id="step-5-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h2>Identidade Visual e Conteúdos</h2>
+                        <p>O design do site será criado a partir do seu logo. Como você imagina a atmosfera visual e a produção dos textos e fotos?</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label>Qual atmosfera ou tom de voz você deseja transmitir aos pacientes pelo site?</label>
+                            <div class="custom-radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="Tom de Voz" value="Acolhedor, Humano e Integrativo" checked>
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-heart"></i>
+                                        <span><strong>Acolhedor & Humano</strong><br>Empático, suave e focado no bem-estar integral.</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="Tom de Voz" value="Premium, Minimalista e Sofisticado">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-gem"></i>
+                                        <span><strong>Premium & Minimalista</strong><br>Sofisticado, elegante, limpo e com muito espaço em branco.</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="Tom de Voz" value="Científico, Clínico e de Alta Autoridade">
+                                    <span class="radio-box"></span>
+                                    <span class="radio-content">
+                                        <i class="fa-solid fa-dna"></i>
+                                        <span><strong>Científico & Clínico</strong><br>Altamente profissional, focado em pesquisas, medicina e resultados.</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-control required">
+                                <label>Sobre os textos do site:</label>
+                                <div class="select-wrapper">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                    <select name="Produção de Textos" id="inst_texts_origin" required>
+                                        <option value="" disabled selected>Selecione uma opção...</option>
+                                        <option value="Temos os textos prontos e revisados">Já temos todos os textos prontos e revisados</option>
+                                        <option value="Nós forneceremos o rascunho e precisamos de redação/ajuste">Nós daremos o rascunho e o designer ajustará/redigirá</option>
+                                        <option value="Precisamos do serviço profissional de Copywriting do zero">Gostaríamos que o designer/redator escrevesse tudo do zero</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-control required">
+                                <label>Sobre as fotos do site:</label>
+                                <div class="select-wrapper">
+                                    <i class="fa-solid fa-camera"></i>
+                                    <select name="Produção de Fotos" id="inst_photos_origin" required>
+                                        <option value="" disabled selected>Selecione uma opção...</option>
+                                        <option value="Temos fotos profissionais do instituto e equipe">Temos fotos profissionais do espaço e da equipe</option>
+                                        <option value="Temos fotos amadoras e queremos usar banco de imagens também">Usaremos fotos próprias e banco de imagens de alta qualidade</option>
+                                        <option value="Precisamos de ajuda para produzir as fotos / banco de imagens completo">Não temos fotos e precisamos de direção de imagem/banco</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="visual_notes">Mais alguma observação estética? (Ex: gosta de tons pastéis, prefere fontes arredondadas, não gosta de fotos de sorrisos falsos, etc.)</label>
+                            <textarea id="visual_notes" name="Observações Visuais" rows="3" placeholder="Compartilhe qualquer preferência de estilo ou detalhes que a equipe de design precise saber."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 6: Prazos, Expectativas & Finalização -->
+                <div class="form-step" data-step="6" id="step-6-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h2>Prazos e Finalização</h2>
+                        <p>Estamos quase lá! Compartilhe o cronograma ideal e as considerações finais.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-grid">
+                            <div class="input-control required">
+                                <label for="inst_deadline">Qual o prazo ideal ou data-alvo para lançamento?</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-calendar-day"></i>
+                                    <input type="text" id="inst_deadline" name="Prazo Desejado" placeholder="Ex: Em 30 dias, até o fim de Julho, Urgente..." required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-control">
+                                <label for="inst_domain">Já possuem domínio (.com.br) registrado?</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <input type="text" id="inst_domain" name="Domínio Registrado" placeholder="Ex: www.institutoregenere.com.br, ou Não possui">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="final_considerations">Existe mais alguma informação, particularidade ou observação que não abordamos?</label>
+                            <textarea id="final_considerations" name="Observações Finais" rows="3" placeholder="Sinta-se à vontade para compartilhar qualquer ponto adicional relevante..."></textarea>
+                        </div>
+
+                        <!-- Painel de Confirmação & Segurança para envio -->
+                        <div class="confirmation-card">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div class="confirmation-content">
+                                <h4>Pronto para enviar!</h4>
+                                <p>Suas respostas estão salvas localmente neste navegador. Ao clicar em enviar, os dados serão encaminhados com total segurança para nossa equipe de desenvolvimento e design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação/Navegação -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="btn-prev" disabled>
+                        <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btn-next">
+                        Avançar <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button type="submit" class="btn btn-success" id="btn-submit" style="display: none;">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Briefing
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Tela de Sucesso - Renderizada Dinamicamente ou pós-submit -->
+    <div class="success-screen" id="success-screen" style="display: none;">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fa-solid fa-heart-circle-check"></i>
+            </div>
+            <h2>Muito Obrigado!</h2>
+            <h3>O Briefing do Instituto Regenere foi enviado com sucesso!</h3>
+            <p>Ficamos extremamente felizes em iniciar esta jornada com vocês. Já temos as informações essenciais para dar vida a um projeto elegante, humanizado e de alta conversão.</p>
+            
+            <div class="download-box">
+                <h4>Guarde uma cópia ou compartilhe:</h4>
+                <p class="download-desc">Como garantia de segurança, você também pode baixar um arquivo em formato de texto com suas respostas ou nos enviar rapidamente por WhatsApp.</p>
+                <div class="success-buttons">
+                    <button class="btn btn-outline" id="btn-download-json">
+                        <i class="fa-solid fa-file-arrow-down"></i> Baixar Relatório (TXT)
+                    </button>
+                    <button class="btn btn-outline" id="btn-copy-clipboard">
+                        <i class="fa-solid fa-copy"></i> Copiar Respostas
+                    </button>
+                    <button class="btn btn-whatsapp" id="btn-whatsapp-share">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar via WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="btn-restart" style="margin-top: 2rem;">
+                <i class="fa-solid fa-rotate-left"></i> Visualizar ou Editar Respostas
+            </button>
+        </div>
+    </div>
+
+    <!-- Painel Secreto de Configuração do Desenvolvedor (para facilitar o setup do Carlos) -->
+    <button class="dev-config-toggle" id="dev-config-toggle" title="Configurar Destinatário das Respostas">
+        <i class="fa-solid fa-gears"></i>
+    </button>
+    <div class="dev-config-panel" id="dev-config-panel" style="display: none;">
+        <div class="dev-config-header">
+            <h3><i class="fa-solid fa-gears"></i> Painel do Desenvolvedor</h3>
+            <button id="dev-config-close">&times;</button>
+        </div>
+        <div class="dev-config-body">
+            <p>Configure para qual <strong>E-mail</strong> as respostas da cliente devem ser enviadas:</p>
+            <div class="input-control" style="margin-top: 1rem;">
+                <label for="dev_email">E-mail do Carlos / Desenvolvedor</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="dev_email" value="" placeholder="exemplo@gmail.com">
+                </div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="btn-save-dev-config" style="width: 100%; margin-top: 1rem;">
+                <i class="fa-solid fa-check"></i> Salvar Configuração
+            </button>
+            <p class="dev-info-note">Nota: Essa configuração fica salva no navegador. Para enviar o formulário pronto para a cliente, você também pode passar o email direto na URL da página, por exemplo:<br><strong class="code-url">?email=seuemail@dominio.com</strong></p>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

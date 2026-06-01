@@ -1,0 +1,6 @@
+# Git Ignore para o projeto de Briefing Instituto Regenere
+.antigravitycli/
+.gemini/
+*.log
+.DS_Store
+Thumbs.db
