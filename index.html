@@ -3,440 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briefing de Criação do Site - Instituto Regenere (Tratamento de Feridas)</title>
+    <meta name="description" content="Instituto Regenere - Clínica especializada no tratamento humanizado de feridas e curativos especiais. Laserterapia, Pé Diabético, Úlceras e Escaras. Atendimento ético e de alto padrão.">
+    <meta name="author" content="Instituto Regenere">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     
-    <!-- Meta Tags para SEO & Compartilhamento -->
-    <meta name="description" content="Formulário de briefing focado na estruturação do site institucional completo do Instituto Regenere - Tratamento Avançado de Feridas. Coleta de dados clínicos, especialidades e estratégias de conversão via WhatsApp.">
-    <meta name="author" content="Carlos Eduardo">
+    <title>Instituto Regenere | Tratamento Especializado de Feridas e Terapias Avançadas</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome para ícones premium -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background decorativo com formas orgânicas fluidas -->
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
 
-    <!-- Container Principal do App -->
-    <main class="app-container" id="briefing-app">
-        
-        <!-- Painel Lateral - Identidade & Progresso (Desktop) -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-wrapper">
-                    <img src="Logo regenere.png" alt="Instituto Regenere Logo" class="brand-logo">
-                </div>
-                <h1 class="sidebar-title">Briefing do Site</h1>
-                <p class="sidebar-subtitle">Clínica de Feridas</p>
-            </div>
+    <!-- Cabeçalho (Header / Navbar) -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo-area">
+                <img src="assets/images/logo.png" alt="Instituto Regenere Logo" class="logo-img">
+                <span class="logo-text">Instituto <span class="accent-text">Regenere</span></span>
+            </a>
             
-            <!-- Indicador de Passos -->
-            <nav class="steps-nav">
-                <ul class="steps-list" id="steps-indicator">
-                    <li class="step-item active" data-step="1">
-                        <span class="step-num">01</span>
-                        <div class="step-text">
-                            <span class="step-title">Sobre o Instituto</span>
-                            <span class="step-desc">História e equipe clínica</span>
-                        </div>
-                    </li>
-                    <li class="step-item" data-step="2">
-                        <span class="step-num">02</span>
-                        <div class="step-text">
-                            <span class="step-title">Nuances Técnicas</span>
-                            <span class="step-desc">Feridas e tratamentos</span>
-                        </div>
-                    </li>
-                    <li class="step-item" data-step="3">
-                        <span class="step-num">03</span>
-                        <div class="step-text">
-                            <span class="step-title">Diferenciais</span>
-                            <span class="step-desc">Posicionamento vs Concorrentes</span>
-                        </div>
-                    </li>
-                    <li class="step-item" data-step="4">
-                        <span class="step-num">04</span>
-                        <div class="step-text">
-                            <span class="step-title">Estrutura & Leads</span>
-                            <span class="step-desc">Seções do site e WhatsApp</span>
-                        </div>
-                    </li>
+            <!-- Menu Desktop -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#especialidades" class="nav-link">Especialidades</a></li>
+                    <li><a href="#terapias" class="nav-link">Terapias</a></li>
+                    <li><a href="#estrutura" class="nav-link">Estrutura</a></li>
+                    <li><a href="#equipe" class="nav-link">Equipe</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-
-            <!-- Progresso Geral -->
-            <div class="progress-container">
-                <div class="progress-text">
-                    <span>Progresso do Briefing</span>
-                    <span id="progress-percentage">0%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
-                </div>
-                <div class="autosave-tag">
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                    <span>Salvamento automático ativo</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Área Principal do Formulário -->
-        <section class="form-area">
             
-            <!-- Barra de Progresso Mobile -->
-            <div class="mobile-progress">
-                <div class="mobile-logo-bar">
-                    <img src="Logo regenere.png" alt="Instituto Regenere" class="mobile-logo">
-                    <div class="mobile-title-group">
-                        <h2>Instituto Regenere</h2>
-                        <p>Briefing Técnico de Feridas</p>
-                    </div>
-                </div>
-                <div class="mobile-bar-outer">
-                    <div class="mobile-bar-inner" id="mobile-progress-bar" style="width: 25%;"></div>
-                </div>
-                <div class="mobile-step-indicator">
-                    Passo <span id="mobile-current-step">1</span> de 4: <strong id="mobile-step-name">Sobre o Instituto</strong>
-                </div>
-            </div>
-
-            <!-- O Formulário de fato -->
-            <form id="briefing-form" action="https://formsubmit.co/carlosermenezes@gmail.com" method="POST">
-                <!-- Configurações do FormSubmit -->
-                <input type="hidden" name="_subject" value="Briefing Estrutural de Site - Instituto Regenere!">
-                <input type="hidden" name="_next" value=""> <!-- Redirecionamento via JS -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                
-                <!-- PASSO 1: Sobre o Instituto (Estrutura Institucional) -->
-                <div class="form-step active-step" data-step="1" id="step-1-panel">
-                    <div class="step-header">
-                        <div class="step-icon"><i class="fa-solid fa-hotel"></i></div>
-                        <h2>Apresentação Institucional & Equipe</h2>
-                        <p>O foco do site é ser a vitrine oficial do <strong>Instituto Regenere</strong>, oferecendo credibilidade para a administração apresentar a parceiros (hospitals, médicos) e captar novos leads direcionando-os ao WhatsApp.</p>
-                    </div>
-
-                    <div class="inputs-group">
-                        <div class="input-grid">
-                            <div class="input-control required">
-                                <label for="client_name">Seu Nome Completo</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-user"></i>
-                                    <input type="text" id="client_name" name="Nome do Cliente" placeholder="Ex: Dra. Ana Silva" required autocomplete="name">
-                                </div>
-                            </div>
-
-                            <div class="input-control required">
-                                <label for="client_whatsapp">Seu WhatsApp de Contato</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                    <input type="tel" id="client_whatsapp" name="WhatsApp" placeholder="Ex: (11) 99999-9999" required autocomplete="tel">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-control required">
-                            <label for="inst_history">Qual é a história do Instituto, propósito e filosofia de cuidado que devemos destacar na seção "Sobre Nós"?</label>
-                            <textarea id="inst_history" name="História e Filosofia" rows="4" placeholder="Fale brevemente sobre a fundação, a motivação de criar o instituto, e o conceito de atendimento humanizado na reabilitação de tecidos..." required></textarea>
-                        </div>
-
-                        <div class="input-control required">
-                            <label for="inst_team">Quem compõe o Corpo Clínico / Equipe de Enfermagem e Especialistas? Como eles devem ser apresentados?</label>
-                            <textarea id="inst_team" name="Apresentação da Equipe" rows="4" placeholder="Ex: Enfermeiras estomaterapeutas especialistas, médicos parceiros, equipe multidisciplinar... Detalhe a qualificação técnica e o carinho com o paciente para transmitir autoridade aos parceiros." required></textarea>
-                            <span class="helper-text">Isso nos ajudará a criar a seção de "Profissionais" de forma a construir forte autoridade técnica.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PASSO 2: Nuances Técnicas (O Catálogo Clínico) -->
-                <div class="form-step" data-step="2" id="step-2-panel">
-                    <div class="step-header">
-                        <div class="step-icon"><i class="fa-solid fa-stethoscope"></i></div>
-                        <h2>Nuances Clínicas & Tratamento de Feridas</h2>
-                        <p>Para construir um site institucional completo e informativo, precisamos detalhar quais variações de feridas e tecnologias de cura avançada farão parte da vitrine de especialidades.</p>
-                    </div>
-
-                    <div class="inputs-group">
-                        <div class="input-control required">
-                            <label>Quais são os principais tipos de feridas e lesões tratadas que deverão ter páginas ou seções dedicadas no site?</label>
-                            <div class="tag-selector-grid">
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Pé Diabético (Úlceras Neuropáticas)" checked>
-                                    <span>Pé Diabético</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Úlceras Venosas" checked>
-                                    <span>Úlceras Venosas</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Úlceras Arteriais" checked>
-                                    <span>Úlceras Arteriais</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Lesões por Pressão (Escaras)" checked>
-                                    <span>Lesões por Pressão (Escaras)</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Deiscência Cirúrgica (Complicações de Cicatrizes)" checked>
-                                    <span>Deiscência Cirúrgica</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Queimaduras Crônicas ou Traumáticas">
-                                    <span>Queimaduras</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Tipos de Feridas[]" value="Estomas e Estomaterapia (Reabilitação)" checked>
-                                    <span>Cuidados com Estomas</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="input-control required">
-                            <label>Quais são os principais procedimentos e terapias avançadas que farão parte do portfólio clínico?</label>
-                            <div class="custom-checkbox-group">
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Laserterapia de Baixa Intensidade (Fotobiomodulação)" checked>
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Laserterapia de Baixa Intensidade</strong>
-                                        Uso de luz vermelha e infravermelha para analgesia, controle inflamatório e estímulo à cicatrização.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Terapia por Pressão Negativa (TPN / Vácuo)">
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Terapia por Pressão Negativa (Vácuo)</strong>
-                                        Dispositivo que aplica pressão subatmosférica contínua ou intermitente para estimular tecido de granulação.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Ozonioterapia Clínica Terapêutica">
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Ozonioterapia Clínica</strong>
-                                        Aplicação de mistura gasosa de oxigênio-ozônio pelo efeito antimicrobiano e acelerador de reparo celular.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Curativos Tecnológicos / Coberturas Avançadas" checked>
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Coberturas e Curativos de Alta Tecnologia</strong>
-                                        Alginatos de cálcio/sódio, hidrogéis, espumas com prata, carvão ativado e colágeno biopolímero.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Desbridamento de Tecido Desvitalizado (Instrumental, Químico)">
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Desbridamento Instrumental/Químico (WBP)</strong>
-                                        Técnicas de limpeza da ferida por remoção de esfacelo ou necrose (Desbridamento Instrumental Conservador ou Enzimático).
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="input-control">
-                            <label for="inst_technical_details">Descreva resumidamente se existe algum protocolo, equipamento ou detalhe técnico exclusivo do Instituto que devemos ressaltar para os parceiros (ex: terapias compressivas, bota de Unna, etc.):</label>
-                            <textarea id="inst_technical_details" name="Diferenciais Técnicos de Cura" rows="3" placeholder="Insira detalhes sobre as marcas de curativos, equipamentos de laser, bota de Unna, bandagens elastoméricas, acompanhamento de Doppler vascular, etc..."></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PASSO 3: Diferenciais Clínicos (A autoridade contra concorrentes) -->
-                <div class="form-step" data-step="3" id="step-3-panel">
-                    <div class="step-header">
-                        <div class="step-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-                        <h2>Diferenciais Clínicos vs Concorrência</h2>
-                        <p>O maior concorrente nacional do setor é a rede **Doutor Feridas**. Precisamos definir como o Instituto Regenere se posiciona como uma alternativa mais qualificada, humana ou tecnológica.</p>
-                    </div>
-
-                    <div class="inputs-group">
-                        <div class="input-control required">
-                            <label for="competitor_differentials">Quais são os principais diferenciais do Instituto Regenere em relação ao Doutor Feridas? O que fará os hospitais e médicos preferirem o seu serviço?</label>
-                            <textarea id="competitor_differentials" name="Diferenciais vs Doutor Feridas" rows="4" placeholder="Ex: Nosso foco em abordagem integrativa multidisciplinar real, velocidade na resposta de atendimento home care, suporte direto aos consultórios médicos para reabilitação do paciente, auxílio burocrático simplificado de reembolso..." required></textarea>
-                        </div>
-
-                        <div class="input-control">
-                            <label for="clinical_proof">Você possui casos de sucesso documentados, pesquisas, estatísticas de tempo médio de cicatrização reduzido ou depoimentos reais que possamos colocar como Prova Social para gerar credibilidade?</label>
-                            <textarea id="clinical_proof" name="Casos de Sucesso e Testemunhos" rows="4" placeholder="Insira resumos de depoimentos, parcerias com hospitais locais ou conquistas clínicas que validem o atendimento humanizado do Instituto..."></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PASSO 4: Estrutura do Site & WhatsApp Leads -->
-                <div class="form-step" data-step="4" id="step-4-panel">
-                    <div class="step-header">
-                        <div class="step-icon"><i class="fa-solid fa-route"></i></div>
-                        <h2>Estrutura do Site e Conversão em WhatsApp</h2>
-                        <p>Como o contato e o agendamento serão unificados via WhatsApp, vamos desenhar o mapa de seções do site institucional para estruturar a navegação por completo.</p>
-                    </div>
-
-                    <div class="inputs-group">
-                        <div class="input-control required">
-                            <label>Quais páginas e seções estruturais você visualiza para o portal institucional por inteiro?</label>
-                            <div class="tag-selector-grid">
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Página Inicial (Home)" checked disabled>
-                                    <span>Página Inicial (Home)</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Quem Somos / O Instituto" checked disabled>
-                                    <span>Quem Somos (Apresentação)</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Catálogo Técnico de Feridas e Tratamentos" checked disabled>
-                                    <span>Especialidades e Feridas</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Equipe e Profissionais Clínicos" checked>
-                                    <span>Profissionais / Equipe</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Espaço Físico / Nossa Clínica (Inauguração)" checked>
-                                    <span>Clínica / Espaço Físico</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Dúvidas Frequentes (FAQ)" checked>
-                                    <span>Perguntas Frequentes (FAQ)</span>
-                                </label>
-                                <label class="tag-chip">
-                                    <input type="checkbox" name="Estrutura do Site[]" value="Canal Exclusivo para Médicos & Parceiros B2B">
-                                    <span>Canal do Médico (B2B)</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="input-control required">
-                            <label>Para a conversão qualificada no WhatsApp, quais dados mínimos você gostaria que o formulário de contato do site coletasse antes de direcionar o lead para o chat?</label>
-                            <div class="custom-checkbox-group">
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Nome e Telefone de contato" checked disabled>
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Nome e WhatsApp (Obrigatório)</strong>
-                                        Dados básicos para início imediato do diálogo.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Perfil do Lead (Paciente / Familiar / Médico / Hospital)" checked>
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Perfil do Lead</strong>
-                                        Identificar se quem está entrando em contato é o próprio paciente, um familiar, um médico encaminhador ou um parceiro institucional.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Tipo de Lesão / Dúvida Clínica">
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Tipo de Lesão / Sintoma</strong>
-                                        Campo de seleção (pé diabético, escara, curativo pós-cirurgia, estoma, outro) para agilizar a triagem técnica pela enfermeira de plantão.
-                                    </span>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Necessidade de Atendimento Domiciliar (Home Care) ou Ambulatório">
-                                    <span class="checkbox-box"></span>
-                                    <span class="checkbox-label">
-                                        <strong>Modalidade Pretendida</strong>
-                                        Saber se o paciente precisa de atendimento domiciliar imediato ou está buscando o ambulatório físico.
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="input-grid">
-                            <div class="input-control required">
-                                <label for="clinic_whatsapp">Qual será o número de WhatsApp para atendimento e agendamentos?</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                    <input type="tel" id="clinic_whatsapp" name="WhatsApp de Atendimento da Clínica" placeholder="Ex: (38) 99999-9999" required>
-                                </div>
-                            </div>
-
-                            <div class="input-control required">
-                                <label for="inst_launch_date">Qual a data de lançamento ideal para o portal?</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-calendar-check"></i>
-                                    <input type="text" id="inst_launch_date" name="Prazo de Lançamento" placeholder="Ex: Em 20 dias, até o fim deste mês..." required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Painel de Confirmação & Segurança para envio -->
-                        <div class="confirmation-card">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <div class="confirmation-content">
-                                <h4>Pronto para enviar!</h4>
-                                <p>Ao clicar em enviar, os dados serão encaminhados com total segurança para o e-mail **carlosermenezes@gmail.com**. A sua cópia de backup do briefing ficará guardada localmente.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botões de Ação/Navegação -->
-                <div class="form-navigation">
-                    <button type="button" class="btn btn-secondary" id="btn-prev" disabled>
-                        <i class="fa-solid fa-arrow-left"></i> Voltar
-                    </button>
-                    <button type="button" class="btn btn-primary" id="btn-next">
-                        Avançar <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                    <button type="submit" class="btn btn-success" id="btn-submit" style="display: none;">
-                        <i class="fa-solid fa-paper-plane"></i> Enviar Briefing Estrutural
-                    </button>
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <!-- Tela de Sucesso - Renderizada Dinamicamente ou pós-submit -->
-    <div class="success-screen" id="success-screen" style="display: none;">
-        <div class="success-card">
-            <div class="success-icon">
-                <i class="fa-solid fa-heart-circle-check"></i>
-            </div>
-            <h2>Muito Obrigado!</h2>
-            <h3>O Briefing do Instituto Regenere foi enviado com sucesso!</h3>
-            <p>Todas as orientações estruturais e técnicas foram compiladas. Já temos as informações necessárias para dar vida ao site institucional completo com alto poder de conversão via WhatsApp.</p>
-            
-            <div class="download-box">
-                <h4>Guarde uma cópia ou envie por WhatsApp:</h4>
-                <p class="download-desc">Como garantia adicional, você pode baixar o relatório em formato de texto das respostas ou enviá-las imediatamente via WhatsApp para o Carlos.</p>
-                <div class="success-buttons">
-                    <button class="btn btn-outline" id="btn-download-json">
-                        <i class="fa-solid fa-file-arrow-down"></i> Baixar Relatório (TXT)
-                    </button>
-                    <button class="btn btn-outline" id="btn-copy-clipboard">
-                        <i class="fa-solid fa-copy"></i> Copiar Respostas
-                    </button>
-                    <button class="btn btn-whatsapp" id="btn-whatsapp-share">
-                        <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
-                    </button>
-                </div>
+            <!-- Botão CTA Cabeçalho -->
+            <div class="header-cta">
+                <a href="#contato" class="btn btn-gold btn-sm">Agendar Avaliação</a>
             </div>
             
-            <button class="btn btn-primary" id="btn-restart" style="margin-top: 2rem;">
-                <i class="fa-solid fa-rotate-left"></i> Visualizar ou Editar Respostas
+            <!-- Botão Menu Mobile -->
+            <button class="mobile-toggle" aria-label="Abrir Menu" id="mobileToggle">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
             </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <!-- Blobs orgânicos decorativos -->
+        <div class="hero-blobs">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Acolhimento & Tecnologia</span>
+                <h1 class="hero-title">Cuidado humanizado e especializado no <span class="highlight">tratamento de feridas</span>.</h1>
+                <p class="hero-subtitle">Aliamos curativos especiais de alta tecnologia e terapias avançadas a um atendimento ético e acolhedor, colocando a sua dignidade e recuperação no centro de tudo.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary btn-lg">
+                        <svg class="icon-svg btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.989-4.478 9.99-9.985A9.998 9.998 0 0 0 12.012 2zm5.727 14.13c-.25.706-1.464 1.295-2.023 1.374-.485.068-.96.284-3.087-.55-2.723-1.07-4.484-3.838-4.62-4.019-.136-.18-1.109-1.472-1.109-2.809 0-1.337.702-1.996.952-2.268.25-.272.545-.34.726-.34.182 0 .364.002.522.01.168.006.39-.062.613.475.227.55.772 1.884.84 2.02.068.136.113.295.023.476-.09.182-.136.295-.272.453-.136.16-.285.358-.408.483-.136.136-.28.284-.12.56.16.277.71 1.171 1.523 1.893.813.722 1.5 1.077 1.84 1.247.34.17.545.136.75-.102.204-.238.885-1.032 1.123-1.383.238-.35.476-.295.794-.176.318.12 2.019.952 2.36 1.122.34.17.568.25.648.385.08.137.08.794-.17 1.502z"/>
+                        </svg>
+                        Agendar via WhatsApp
+                    </a>
+                    <a href="#especialidades" class="btn btn-outline btn-lg">Conhecer Especialidades</a>
+                </div>
+                
+                <!-- Selos rápidos de diferencial -->
+                <div class="hero-badges">
+                    <div class="badge-item">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>Atendimento 100% Ético</span>
+                    </div>
+                    <div class="badge-item">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                        </svg>
+                        <span>Tecnologia de Ponta</span>
+                    </div>
+                    <div class="badge-item">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                        <span>Custo-Benefício Justo</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-media">
+                <div class="image-wrapper shadow-lg">
+                    <img src="assets/images/clinic_reception.jpg" alt="Recepção Instituto Regenere" class="hero-img">
+                    <div class="overlay-card card-1 shadow-md">
+                        <div class="card-icon-area">🌿</div>
+                        <div>
+                            <h4>Humanização</h4>
+                            <p>Cuidado centrado no paciente</p>
+                        </div>
+                    </div>
+                    <div class="overlay-card card-2 shadow-md">
+                        <div class="card-icon-area">⚡</div>
+                        <div>
+                            <h4>Laserterapia</h4>
+                            <p>Aceleração biológica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais Rápidos -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="highlight-card text-center shadow-sm">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>Ouvimos as suas dores de verdade. Acreditamos em um cuidado afetuoso, no respeito individual e no acolhimento familiar em todas as etapas da cicatrização.</p>
+                </div>
+                
+                <div class="highlight-card text-center shadow-sm">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Tecnologia e Especialização</h3>
+                    <p>Utilizamos terapias avançadas de fotobioestimulação (laser) e curativos especiais de última geração que aceleram consideravelmente o fechamento das lesões.</p>
+                </div>
+                
+                <div class="highlight-card text-center shadow-sm">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="2" y1="12" x2="22" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Excelente Custo-Benefício</h3>
+                    <p>Oferecemos o que há de melhor em insumos e protocolos especializados a um preço justo, tornando o tratamento de alto padrão viável para quem precisa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section class="about-section section-padding" id="sobre">
+        <div class="container grid grid-2">
+            <div class="about-info">
+                <span class="section-tag">Sobre o Instituto</span>
+                <h2 class="section-title">Acolhimento, Ética e Eficácia no Cuidado da Pele</h2>
+                <p class="about-text-lead">Nossa clínica foi criada com a filosofia de oferecer um atendimento humanizado, acolhedor e ético, colocando o bem-estar e a dignidade de cada paciente no centro de todas as ações.</p>
+                <p>No Instituto Regenere, entendemos que uma ferida afeta muito mais do que a barreira física da pele — compromete a mobilidade, a autoimagem e a qualidade de vida. Por isso, nossa equipe atua com sensibilidade e competência técnica para aliviar a dor, prevenir complicações e promover uma cicatrização segura e definitiva.</p>
+                <p>Buscamos ser a principal referência em cuidados avançados de feridas na região, trabalhando em parceria com médicos assistentes e hospitais para garantir a melhor transição do leito hospitalar para o tratamento ambulatorial especializado.</p>
+                
+                <div class="about-metrics">
+                    <div class="metric-item">
+                        <span class="metric-num">100%</span>
+                        <span class="metric-label">Dedicação Ética</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-num">3+</span>
+                        <span class="metric-label">Especialistas Dedicados</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-num">Alta</span>
+                        <span class="metric-label">Tecnologia Cicatrizante</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-visual">
+                <div class="about-img-container shadow-lg">
+                    <img src="assets/images/clinic_treatment.jpg" alt="Consultório do Instituto Regenere" class="about-img">
+                    <div class="floating-badge shadow-md">
+                        <span class="badge-title">Protocolo Integrado</span>
+                        <span class="badge-desc">Limpeza + Cobertura + Laser</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Especialidades (Tipos de Feridas Tratadas) -->
+    <section class="specialties-section section-padding" id="especialidades">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-tag">O que Tratamos</span>
+                <h2 class="section-title">Nossas Especialidades Clínicas</h2>
+                <p class="section-subtitle">Realizamos avaliação diagnóstica e aplicação de protocolos específicos para as principais feridas e lesões de alta complexidade.</p>
+            </div>
+            
+            <div class="grid grid-3 specialty-grid">
+                <!-- Pé Diabético -->
+                <div class="specialty-card shadow-sm" data-wound="diabetico">
+                    <div class="specialty-icon-area">🦶</div>
+                    <h3>Pé Diabético</h3>
+                    <p>Prevenção e tratamento de úlceras complexas, controle infeccioso rigoroso e alívio de pontos de pressão para preservar a integridade do membro.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+                
+                <!-- Úlceras Venosas -->
+                <div class="specialty-card shadow-sm" data-wound="venosas">
+                    <div class="specialty-icon-area">🩸</div>
+                    <h3>Úlceras Venosas</h3>
+                    <p>Tratamento de feridas nos membros inferiores originadas por insuficiência circulatória de retorno, com aplicação de terapia compressiva avançada.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+                
+                <!-- Úlceras Arteriais -->
+                <div class="specialty-card shadow-sm" data-wound="arteriais">
+                    <div class="specialty-icon-area">🩺</div>
+                    <h3>Úlceras Arteriais</h3>
+                    <p>Cuidados altamente especializados para lesões isquêmicas dolorosas causadas por obstrução arterial, prevenindo infecções e perda tecidual.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+                
+                <!-- Lesões por Pressão (Escaras) -->
+                <div class="specialty-card shadow-sm" data-wound="escaras">
+                    <div class="specialty-icon-area">🛏️</div>
+                    <h3>Lesões por Pressão (Escaras)</h3>
+                    <p>Prevenção e tratamento dinâmico de feridas por pressão em pacientes acamados ou com mobilidade restrita, estimulando a cicatrização celular.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+                
+                <!-- Deiscência Cirúrgica -->
+                <div class="specialty-card shadow-sm" data-wound="cirurgica">
+                    <div class="specialty-icon-area">✂️</div>
+                    <h3>Deiscência Cirúrgica</h3>
+                    <p>Cuidado focado na reabertura indesejada de pontos cirúrgicos pós-operatórios, promovendo granulação rápida e prevenção bacteriana.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+                
+                <!-- Cuidados com Estomas -->
+                <div class="specialty-card shadow-sm" data-wound="estomas">
+                    <div class="specialty-icon-area">🛡️</div>
+                    <h3>Cuidados com Estomas</h3>
+                    <p>Acompanhamento de estomizados, proteção da pele periestoma contra dermatites e orientação sobre o manejo correto de bolsas coletoras.</p>
+                    <button class="btn-text btn-learn-more">Saiba Mais &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Procedimentos e Terapias Avançadas -->
+    <section class="therapies-section section-padding bg-sage-light" id="terapias">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-tag">Tecnologia Médica</span>
+                <h2 class="section-title">Procedimentos e Terapias Avançadas</h2>
+                <p class="section-subtitle">Aliamos ciência e insumos de última geração para acelerar os ciclos naturais de cicatrização do organismo humano.</p>
+            </div>
+            
+            <div class="grid grid-3 therapy-grid">
+                <!-- Laserterapia -->
+                <div class="therapy-card shadow-sm">
+                    <div class="therapy-badge">Alta Performance</div>
+                    <h3>Laserterapia de Baixa Intensidade</h3>
+                    <p>A fotobioestimulação por laser de baixa intensidade ativa a microcirculação local, reduz drasticamente a dor (efeito analgésico), combate inflamações e acelera em até 3x a multiplicação das células regeneradoras da pele.</p>
+                    <ul class="therapy-bullets">
+                        <li>Sem dor e sem agulhas</li>
+                        <li>Ação anti-inflamatória direta</li>
+                        <li>Estímulo ao colágeno e circulação</li>
+                    </ul>
+                </div>
+                
+                <!-- Curativos Avançados -->
+                <div class="therapy-card shadow-sm">
+                    <div class="therapy-badge">Insumos Premium</div>
+                    <h3>Coberturas e Curativos Especiais</h3>
+                    <p>Prescrevemos e aplicamos o que há de mais avançado no mercado de biologia tecidual. Substituímos as coberturas tradicionais por curativos inteligentes adequados ao estágio exato de cicatrização.</p>
+                    <ul class="therapy-bullets">
+                        <li><strong>Bota de Unna</strong> para compressão venosa</li>
+                        <li><strong>Coberturas com Prata</strong> antimicrobiana</li>
+                        <li><strong>Hidrogéis e Hidrocoloides</strong> biológicos</li>
+                    </ul>
+                </div>
+                
+                <!-- Desbridamento -->
+                <div class="therapy-card shadow-sm">
+                    <div class="therapy-badge">Preparação de Leito</div>
+                    <h3>Desbridamento Instrumental / Químico</h3>
+                    <p>Técnicas especializadas alinhadas ao conceito <strong>WBP (Wound Bed Preparation)</strong> para a remoção segura de tecidos necróticos, fibrinas e biofilmes bacterianos que impedem a ferida de fechar de maneira saudável.</p>
+                    <ul class="therapy-bullets">
+                        <li>Desbridamento cirúrgico/instrumental cortante</li>
+                        <li>Desbridamento enzimático e autolítico seguro</li>
+                        <li>Controle rigoroso da carga bacteriana</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Caixa informativa de destaque técnico -->
+            <div class="technical-highlight-box shadow-md">
+                <div class="tech-highlight-icon">🔬</div>
+                <div class="tech-highlight-content">
+                    <h4>Protocolos Avançados de Coberturas</h4>
+                    <p>Nossa clínica realiza o tratamento de feridas com curativos especiais, como a <strong>Bota de Unna</strong>, <strong>hidrocoloides</strong>, <strong>hidrogéis</strong> e <strong>coberturas com prata nanocristalina</strong>, aplicando técnicas científicas modernas de controle de umidade e pH. Isso garante menor desconforto para o paciente, menor frequência de trocas e excelente custo-benefício hospitalar e ambulatorial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Estrutura (Espaço Físico) -->
+    <section class="gallery-section section-padding" id="estrutura">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-tag">Nossa Clínica</span>
+                <h2 class="section-title">Um Espaço Planejado para o Acolhimento</h2>
+                <p class="section-subtitle">Conheça o ambiente do Instituto Regenere, projetado sob rígidos critérios de biossegurança e higiene, sem abrir mão do aconchego e bem-estar físico.</p>
+            </div>
+            
+            <div class="grid grid-2 structure-gallery">
+                <div class="gallery-item shadow-sm">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/clinic_reception.jpg" alt="Recepção do Instituto Regenere" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Recepção Humanizada</h3>
+                        <p>Ambiente decorado em tons terapêuticos e suaves de verde e dourado, projetado para oferecer conforto, tranquilidade e privacidade desde o primeiro momento.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item shadow-sm">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/clinic_treatment.jpg" alt="Consultório de Tratamentos e Curativos" class="gallery-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Sala de Tratamentos e Terapias</h3>
+                        <p>Consultório equipado com iluminação regulável de fototerapia, laser clínico, macas ergonômicas e materiais esterilizados para procedimentos de desbridamento e coberturas com máxima higiene.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Corpo Clínico (Equipe) -->
+    <section class="team-section section-padding bg-sage-ultra-light" id="equipe">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-tag">Corpo Clínico & Administrativo</span>
+                <h2 class="section-title">Especialistas que Cuidam de Você</h2>
+                <p class="section-subtitle">Nossa equipe une saberes complementares da medicina, enfermagem dermatológica e gestão de acolhimento para oferecer o tratamento ideal.</p>
+            </div>
+            
+            <div class="grid grid-3 team-grid">
+                <!-- Dr. Marlo Patrício -->
+                <div class="team-card text-center shadow-sm">
+                    <div class="team-avatar-wrapper">
+                        <img src="assets/images/doctor_marlo.jpg" alt="Dr. Marlo Patrício" class="team-avatar">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Marlo Patrício</h3>
+                        <span class="team-role">Médico Clínico</span>
+                        <p class="team-desc">Responsável pela supervisão clínica e diagnóstica, avaliações vasculares e indicação de tratamentos sistêmicos integrados para cicatrização complexa.</p>
+                    </div>
+                </div>
+                
+                <!-- Linda Freitas -->
+                <div class="team-card text-center shadow-sm">
+                    <div class="team-avatar-wrapper">
+                        <img src="assets/images/nurse_linda.jpg" alt="Linda Freitas" class="team-avatar">
+                    </div>
+                    <div class="team-info">
+                        <h3>Linda Freitas</h3>
+                        <span class="team-role">Enfermeira Especialista</span>
+                        <p class="team-desc">Especializada no tratamento avançado de lesões cutâneas, responsável pela aplicação direta das coberturas especiais, desbridamento clínico e sessões de laserterapia.</p>
+                    </div>
+                </div>
+                
+                <!-- Júnia Patrício -->
+                <div class="team-card text-center shadow-sm">
+                    <div class="team-avatar-wrapper">
+                        <img src="assets/images/manager_junia.jpg" alt="Júnia Patrício" class="team-avatar">
+                    </div>
+                    <div class="team-info">
+                        <h3>Júnia Patrício</h3>
+                        <span class="team-role">Gerente Administrativa</span>
+                        <p class="team-desc">Garante a excelência operacional da clínica, controle de qualidade dos insumos e o acolhimento burocrático e humanizado de todos os pacientes e familiares.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Perguntas Frequentes (FAQ) -->
+    <section class="faq-section section-padding" id="faq">
+        <div class="container">
+            <div class="text-center section-header">
+                <span class="section-tag">Dúvidas Comuns</span>
+                <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
+                <p class="section-subtitle">Esclarecemos as principais dúvidas relacionadas aos tratamentos de feridas oferecidos no Instituto Regenere.</p>
+            </div>
+            
+            <div class="faq-accordion-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item shadow-sm">
+                    <button class="faq-question">
+                        <span>Como funciona o primeiro atendimento no Instituto Regenere?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No primeiro atendimento, realizamos uma consulta minuciosa de avaliação da ferida e da saúde do paciente. Analisamos o fluxo sanguíneo local, a presença de tecido desvitalizado, o nível de dor e os hábitos de vida do paciente. Com base nisso, traçamos um Plano de Cuidado Individualizado, definindo as coberturas e terapias (como laserterapia) indicadas e a estimativa de retorno.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-item shadow-sm">
+                    <button class="faq-question">
+                        <span>O tratamento com laserterapia de baixa intensidade dói?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. A laserterapia de baixa intensidade é um procedimento totalmente indolor, não invasivo e seguro. A maioria dos pacientes não sente nada durante a aplicação ou relata apenas uma leve e agradável sensação de aquecimento local. Pelo contrário, um dos principais efeitos imediatos do laser é o alívio analgésico da dor da ferida.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-item shadow-sm">
+                    <button class="faq-question">
+                        <span>O que é a Bota de Unna e quando ela é indicada?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A Bota de Unna é um curativo compressivo impregnado com uma pasta de óxido de zinco, goma acácia, glicerina e água. Ela é indicada principalmente para o tratamento de Úlceras Venosas nas pernas. Ela funciona fornecendo uma compressão firme que auxilia a musculatura da panturrilha a bombear o sangue venoso de volta ao coração, combatendo o inchaço e criando o ambiente úmido ideal para a cicatrização rápida da úlcera.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="faq-item shadow-sm">
+                    <button class="faq-question">
+                        <span>Qual a diferença entre curativos simples e as coberturas de alta tecnologia?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Os curativos simples (como a gaze comum) servem apenas para cobrir a ferida, mas muitas vezes secam o leito, grudam no tecido de cicatrização (causando dor e sangramento ao retirar) e não combatem infecções de forma ativa. Já as coberturas de alta tecnologia (hidrogel, hidrocoloide, prata) mantêm a umidade fisiológica perfeita no leito, estimulam o próprio corpo a remover tecidos mortos e combatem infecções sem agredir a pele saudável, reduzindo o tempo total de cicatrização.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="faq-item shadow-sm">
+                    <button class="faq-question">
+                        <span>A clínica aceita convênios ou planos de saúde?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Atendemos de forma particular com foco em oferecer o melhor custo-benefício e liberdade de escolha nos melhores materiais para cada caso. No entanto, fornecemos laudo detalhado e recibo detalhado dos procedimentos para que o paciente possa solicitar reembolso junto ao seu plano de saúde/convênio, caso ele possua essa modalidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Formulário de Pré-Agendamento de WhatsApp (Funil Qualificado) -->
+    <section class="contact-section section-padding bg-primary-dark" id="contato">
+        <div class="container grid grid-2">
+            <div class="contact-info-text text-white">
+                <span class="section-tag text-gold">Dê o primeiro passo para o alívio</span>
+                <h2 class="section-title text-white">Inicie o Tratamento da sua Ferida Hoje Mesmo</h2>
+                <p class="contact-desc">O tratamento precoce e especializado reduz os riscos de complicações graves e infecções. Preencha os dados ao lado para qualificar seu atendimento e ser direcionado(a) imediatamente ao nosso WhatsApp.</p>
+                
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">🟢</span>
+                        <div>
+                            <h4>WhatsApp Oficial</h4>
+                            <p class="text-gold font-bold">(38) 98429-0656</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <div>
+                            <h4>Localização de Atendimento</h4>
+                            <p>Patos de Minas / Região Noroeste de MG (Consulte atendimento residencial)</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🕒</span>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 08:00 às 18:00 | Sábado: Agendamentos especiais</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper shadow-lg">
+                <h3 class="form-title text-center">Pré-Agendamento de Consulta</h3>
+                <p class="form-subtitle text-center">Preencha rapidamente para qualificar seu contato</p>
+                
+                <form id="whatsappForm" class="whatsapp-form">
+                    <!-- Nome -->
+                    <div class="form-group">
+                        <label for="leadName">Nome Completo do Paciente *</label>
+                        <input type="text" id="leadName" name="leadName" placeholder="Ex: Maria Oliveira Santos" required>
+                        <span class="error-msg" id="nameError">O nome é obrigatório.</span>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="form-group">
+                        <label for="leadPhone">Seu WhatsApp de Contato *</label>
+                        <input type="tel" id="leadPhone" name="leadPhone" placeholder="(38) 99999-9999" required>
+                        <span class="error-msg" id="phoneError">O WhatsApp é obrigatório e deve ser válido.</span>
+                    </div>
+                    
+                    <!-- Perfil do Lead (Solicitado no briefing) -->
+                    <div class="form-group">
+                        <label for="leadProfile">Quem está solicitando o contato? *</label>
+                        <select id="leadProfile" name="leadProfile" required>
+                            <option value="" disabled selected>Selecione seu perfil...</option>
+                            <option value="O próprio paciente">Sou o próprio paciente</option>
+                            <option value="Familiar de paciente">Sou familiar do paciente</option>
+                            <option value="Profissional de saúde">Sou médico / profissional de saúde</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                        <span class="error-msg" id="profileError">Selecione uma opção válida.</span>
+                    </div>
+                    
+                    <!-- Especialidade de Interesse -->
+                    <div class="form-group">
+                        <label for="leadInterest">Tipo de ferida/lesão principal</label>
+                        <select id="leadInterest" name="leadInterest">
+                            <option value="Não especificada">Selecione o tipo (opcional)...</option>
+                            <option value="Pé Diabético">Pé Diabético</option>
+                            <option value="Úlcera Venosa">Úlcera Venosa</option>
+                            <option value="Úlcera Arterial">Úlcera Arterial</option>
+                            <option value="Lesão por Pressão (Escara)">Lesão por Pressão (Escara)</option>
+                            <option value="Deiscência Cirúrgica">Deiscência Cirúrgica</option>
+                            <option value="Cuidados com Estomas">Cuidados com Estomas</option>
+                            <option value="Outro tipo de ferida">Outro tipo de ferida / lesão</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Observações -->
+                    <div class="form-group">
+                        <label for="leadMessage">Mensagem / Relato rápido da situação (Opcional)</label>
+                        <textarea id="leadMessage" name="leadMessage" rows="3" placeholder="Conte brevemente sobre a ferida para nos ajudar a entender o caso..."></textarea>
+                    </div>
+                    
+                    <!-- Botão Enviar -->
+                    <button type="submit" class="btn btn-gold btn-block btn-submit">
+                        <svg class="icon-svg btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.989-4.478 9.99-9.985A9.998 9.998 0 0 0 12.012 2zm5.727 14.13c-.25.706-1.464 1.295-2.023 1.374-.485.068-.96.284-3.087-.55-2.723-1.07-4.484-3.838-4.62-4.019-.136-.18-1.109-1.472-1.109-2.809 0-1.337.702-1.996.952-2.268.25-.272.545-.34.726-.34.182 0 .364.002.522.01.168.006.39-.062.613.475.227.55.772 1.884.84 2.02.068.136.113.295.023.476-.09.182-.136.295-.272.453-.136.16-.285.358-.408.483-.136.136-.28.284-.12.56.16.277.71 1.171 1.523 1.893.813.722 1.5 1.077 1.84 1.247.34.17.545.136.75-.102.204-.238.885-1.032 1.123-1.383.238-.35.476-.295.794-.176.318.12 2.019.952 2.36 1.122.34.17.568.25.648.385.08.137.08.794-.17 1.502z"/>
+                        </svg>
+                        Confirmar e Ir para o WhatsApp
+                    </button>
+                    
+                    <p class="form-disclaimer text-center">Ao clicar, você concorda em enviar seus dados para que possamos iniciar o seu pré-cadastro clínico de forma segura e ética.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Elegante de Especialidades -->
+    <div class="modal-overlay" id="woundModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-container shadow-lg">
+            <button class="modal-close" aria-label="Fechar Janela" id="modalClose">&times;</button>
+            <div class="modal-header-visual">
+                <span class="modal-icon" id="modalIcon">🦶</span>
+                <div>
+                    <span class="modal-category">Especialidade Clínica</span>
+                    <h3 class="modal-title" id="modalTitle">Pé Diabético</h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4>O que é?</h4>
+                    <p id="modalDescription">Descrição detalhada da patologia...</p>
+                </div>
+                <div class="modal-section">
+                    <h4>Abordagem de Tratamento no Instituto</h4>
+                    <p id="modalTreatment">Como o Instituto Regenere aborda esta ferida utilizando seus protocolos exclusivos de coberturas especiais, desbridamento e laserterapia.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalBtnClose">Voltar</button>
+                <button class="btn btn-primary" id="modalBtnCTA">
+                    <svg class="icon-svg btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.989-4.478 9.99-9.985A9.998 9.998 0 0 0 12.012 2zm5.727 14.13c-.25.706-1.464 1.295-2.023 1.374-.485.068-.96.284-3.087-.55-2.723-1.07-4.484-3.838-4.62-4.019-.136-.18-1.109-1.472-1.109-2.809 0-1.337.702-1.996.952-2.268.25-.272.545-.34.726-.34.182 0 .364.002.522.01.168.006.39-.062.613.475.227.55.772 1.884.84 2.02.068.136.113.295.023.476-.09.182-.136.295-.272.453-.136.16-.285.358-.408.483-.136.136-.28.284-.12.56.16.277.71 1.171 1.523 1.893.813.722 1.5 1.077 1.84 1.247.34.17.545.136.75-.102.204-.238.885-1.032 1.123-1.383.238-.35.476-.295.794-.176.318.12 2.019.952 2.36 1.122.34.17.568.25.648.385.08.137.08.794-.17 1.502z"/>
+                    </svg>
+                    Quero Tratar esta Ferida
+                </button>
+            </div>
         </div>
     </div>
 
+    <!-- Rodapé (Footer) -->
+    <footer class="main-footer bg-primary-dark text-white">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo-area text-white">
+                    <img src="assets/images/logo.png" alt="Instituto Regenere Logo" class="logo-img">
+                    <span class="logo-text text-white">Instituto <span class="text-gold">Regenere</span></span>
+                </a>
+                <p class="brand-slogan">Cuidado ético, acolhimento humanizado e cicatrização avançada. Seu bem-estar é o centro das nossas ações.</p>
+                <div class="social-links">
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com" class="social-icon" aria-label="Instagram" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <!-- Facebook Icon -->
+                    <a href="https://facebook.com" class="social-icon" aria-label="Facebook" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Menu Rápido</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#terapias">Terapias Avançadas</a></li>
+                    <li><a href="#estrutura">Estrutura</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Especialidades</h4>
+                <ul>
+                    <li><a href="#especialidades" data-wound-footer="diabetico">Pé Diabético</a></li>
+                    <li><a href="#especialidades" data-wound-footer="venosas">Úlceras Venosas</a></li>
+                    <li><a href="#especialidades" data-wound-footer="escaras">Lesões por Pressão</a></li>
+                    <li><a href="#especialidades" data-wound-footer="cirurgica">Deiscência Cirúrgica</a></li>
+                    <li><a href="#especialidades" data-wound-footer="estomas">Estomas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Atendimento</h4>
+                <p>📞 (38) 98429-0656</p>
+                <p>✉️ contato@institutoregenere.com.br</p>
+                <p>📍 Patos de Minas - MG</p>
+                <span class="resp-tecnico">Responsabilidade Técnica: Linda Freitas - COREN-MG</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Instituto Regenere. Todos os direitos reservados.</p>
+                <p>Desenvolvido com carinho por Carlos Eduardo.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="#contato" class="whatsapp-floating shadow-lg" aria-label="Fale conosco no WhatsApp" id="whatsappFloating">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.989-4.478 9.99-9.985A9.998 9.998 0 0 0 12.012 2zm5.727 14.13c-.25.706-1.464 1.295-2.023 1.374-.485.068-.96.284-3.087-.55-2.723-1.07-4.484-3.838-4.62-4.019-.136-.18-1.109-1.472-1.109-2.809 0-1.337.702-1.996.952-2.268.25-.272.545-.34.726-.34.182 0 .364.002.522.01.168.006.39-.062.613.475.227.55.772 1.884.84 2.02.068.136.113.295.023.476-.09.182-.136.295-.272.453-.136.16-.285.358-.408.483-.136.136-.28.284-.12.56.16.277.71 1.171 1.523 1.893.813.722 1.5 1.077 1.84 1.247.34.17.545.136.75-.102.204-.238.885-1.032 1.123-1.383.238-.35.476-.295.794-.176.318.12 2.019.952 2.36 1.122.34.17.568.25.648.385.08.137.08.794-.17 1.502z"/>
+        </svg>
+    </a>
 
-    <!-- Script principal -->
+    <!-- JS Principal -->
     <script src="script.js"></script>
 </body>
 </html>

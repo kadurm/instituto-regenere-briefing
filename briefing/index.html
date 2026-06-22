@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing de Criação do Site - Instituto Regenere (Tratamento de Feridas)</title>
+    
+    <!-- Meta Tags para SEO & Compartilhamento -->
+    <meta name="description" content="Formulário de briefing focado na estruturação do site institucional completo do Instituto Regenere - Tratamento Avançado de Feridas. Coleta de dados clínicos, especialidades e estratégias de conversão via WhatsApp.">
+    <meta name="author" content="Carlos Eduardo">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para ícones premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background decorativo com formas orgânicas fluidas -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Container Principal do App -->
+    <main class="app-container" id="briefing-app">
+        
+        <!-- Painel Lateral - Identidade & Progresso (Desktop) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-wrapper">
+                    <img src="Logo regenere.png" alt="Instituto Regenere Logo" class="brand-logo">
+                </div>
+                <h1 class="sidebar-title">Briefing do Site</h1>
+                <p class="sidebar-subtitle">Clínica de Feridas</p>
+            </div>
+            
+            <!-- Indicador de Passos -->
+            <nav class="steps-nav">
+                <ul class="steps-list" id="steps-indicator">
+                    <li class="step-item active" data-step="1">
+                        <span class="step-num">01</span>
+                        <div class="step-text">
+                            <span class="step-title">Sobre o Instituto</span>
+                            <span class="step-desc">História e equipe clínica</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="2">
+                        <span class="step-num">02</span>
+                        <div class="step-text">
+                            <span class="step-title">Nuances Técnicas</span>
+                            <span class="step-desc">Feridas e tratamentos</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="3">
+                        <span class="step-num">03</span>
+                        <div class="step-text">
+                            <span class="step-title">Diferenciais</span>
+                            <span class="step-desc">Posicionamento vs Concorrentes</span>
+                        </div>
+                    </li>
+                    <li class="step-item" data-step="4">
+                        <span class="step-num">04</span>
+                        <div class="step-text">
+                            <span class="step-title">Estrutura & Leads</span>
+                            <span class="step-desc">Seções do site e WhatsApp</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Progresso Geral -->
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>Progresso do Briefing</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+                <div class="autosave-tag">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Salvamento automático ativo</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Área Principal do Formulário -->
+        <section class="form-area">
+            
+            <!-- Barra de Progresso Mobile -->
+            <div class="mobile-progress">
+                <div class="mobile-logo-bar">
+                    <img src="Logo regenere.png" alt="Instituto Regenere" class="mobile-logo">
+                    <div class="mobile-title-group">
+                        <h2>Instituto Regenere</h2>
+                        <p>Briefing Técnico de Feridas</p>
+                    </div>
+                </div>
+                <div class="mobile-bar-outer">
+                    <div class="mobile-bar-inner" id="mobile-progress-bar" style="width: 25%;"></div>
+                </div>
+                <div class="mobile-step-indicator">
+                    Passo <span id="mobile-current-step">1</span> de 4: <strong id="mobile-step-name">Sobre o Instituto</strong>
+                </div>
+            </div>
+
+            <!-- O Formulário de fato -->
+            <form id="briefing-form" action="https://formsubmit.co/carlosermenezes@gmail.com" method="POST">
+                <!-- Configurações do FormSubmit -->
+                <input type="hidden" name="_subject" value="Briefing Estrutural de Site - Instituto Regenere!">
+                <input type="hidden" name="_next" value=""> <!-- Redirecionamento via JS -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <!-- PASSO 1: Sobre o Instituto (Estrutura Institucional) -->
+                <div class="form-step active-step" data-step="1" id="step-1-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-hotel"></i></div>
+                        <h2>Apresentação Institucional & Equipe</h2>
+                        <p>O foco do site é ser a vitrine oficial do <strong>Instituto Regenere</strong>, oferecendo credibilidade para a administração apresentar a parceiros (hospitals, médicos) e captar novos leads direcionando-os ao WhatsApp.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-grid">
+                            <div class="input-control required">
+                                <label for="client_name">Seu Nome Completo</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="client_name" name="Nome do Cliente" placeholder="Ex: Dra. Ana Silva" required autocomplete="name">
+                                </div>
+                            </div>
+
+                            <div class="input-control required">
+                                <label for="client_whatsapp">Seu WhatsApp de Contato</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <input type="tel" id="client_whatsapp" name="WhatsApp" placeholder="Ex: (11) 99999-9999" required autocomplete="tel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-control required">
+                            <label for="inst_history">Qual é a história do Instituto, propósito e filosofia de cuidado que devemos destacar na seção "Sobre Nós"?</label>
+                            <textarea id="inst_history" name="História e Filosofia" rows="4" placeholder="Fale brevemente sobre a fundação, a motivação de criar o instituto, e o conceito de atendimento humanizado na reabilitação de tecidos..." required></textarea>
+                        </div>
+
+                        <div class="input-control required">
+                            <label for="inst_team">Quem compõe o Corpo Clínico / Equipe de Enfermagem e Especialistas? Como eles devem ser apresentados?</label>
+                            <textarea id="inst_team" name="Apresentação da Equipe" rows="4" placeholder="Ex: Enfermeiras estomaterapeutas especialistas, médicos parceiros, equipe multidisciplinar... Detalhe a qualificação técnica e o carinho com o paciente para transmitir autoridade aos parceiros." required></textarea>
+                            <span class="helper-text">Isso nos ajudará a criar a seção de "Profissionais" de forma a construir forte autoridade técnica.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 2: Nuances Técnicas (O Catálogo Clínico) -->
+                <div class="form-step" data-step="2" id="step-2-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                        <h2>Nuances Clínicas & Tratamento de Feridas</h2>
+                        <p>Para construir um site institucional completo e informativo, precisamos detalhar quais variações de feridas e tecnologias de cura avançada farão parte da vitrine de especialidades.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label>Quais são os principais tipos de feridas e lesões tratadas que deverão ter páginas ou seções dedicadas no site?</label>
+                            <div class="tag-selector-grid">
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Pé Diabético (Úlceras Neuropáticas)" checked>
+                                    <span>Pé Diabético</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Úlceras Venosas" checked>
+                                    <span>Úlceras Venosas</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Úlceras Arteriais" checked>
+                                    <span>Úlceras Arteriais</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Lesões por Pressão (Escaras)" checked>
+                                    <span>Lesões por Pressão (Escaras)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Deiscência Cirúrgica (Complicações de Cicatrizes)" checked>
+                                    <span>Deiscência Cirúrgica</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Queimaduras Crônicas ou Traumáticas">
+                                    <span>Queimaduras</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Tipos de Feridas[]" value="Estomas e Estomaterapia (Reabilitação)" checked>
+                                    <span>Cuidados com Estomas</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control required">
+                            <label>Quais são os principais procedimentos e terapias avançadas que farão parte do portfólio clínico?</label>
+                            <div class="custom-checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Laserterapia de Baixa Intensidade (Fotobiomodulação)" checked>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Laserterapia de Baixa Intensidade</strong>
+                                        Uso de luz vermelha e infravermelha para analgesia, controle inflamatório e estímulo à cicatrização.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Terapia por Pressão Negativa (TPN / Vácuo)">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Terapia por Pressão Negativa (Vácuo)</strong>
+                                        Dispositivo que aplica pressão subatmosférica contínua ou intermitente para estimular tecido de granulação.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Ozonioterapia Clínica Terapêutica">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Ozonioterapia Clínica</strong>
+                                        Aplicação de mistura gasosa de oxigênio-ozônio pelo efeito antimicrobiano e acelerador de reparo celular.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Curativos Tecnológicos / Coberturas Avançadas" checked>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Coberturas e Curativos de Alta Tecnologia</strong>
+                                        Alginatos de cálcio/sódio, hidrogéis, espumas com prata, carvão ativado e colágeno biopolímero.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Procedimentos Clínicos[]" value="Desbridamento de Tecido Desvitalizado (Instrumental, Químico)">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Desbridamento Instrumental/Químico (WBP)</strong>
+                                        Técnicas de limpeza da ferida por remoção de esfacelo ou necrose (Desbridamento Instrumental Conservador ou Enzimático).
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="inst_technical_details">Descreva resumidamente se existe algum protocolo, equipamento ou detalhe técnico exclusivo do Instituto que devemos ressaltar para os parceiros (ex: terapias compressivas, bota de Unna, etc.):</label>
+                            <textarea id="inst_technical_details" name="Diferenciais Técnicos de Cura" rows="3" placeholder="Insira detalhes sobre as marcas de curativos, equipamentos de laser, bota de Unna, bandagens elastoméricas, acompanhamento de Doppler vascular, etc..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 3: Diferenciais Clínicos (A autoridade contra concorrentes) -->
+                <div class="form-step" data-step="3" id="step-3-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                        <h2>Diferenciais Clínicos vs Concorrência</h2>
+                        <p>O maior concorrente nacional do setor é a rede **Doutor Feridas**. Precisamos definir como o Instituto Regenere se posiciona como uma alternativa mais qualificada, humana ou tecnológica.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label for="competitor_differentials">Quais são os principais diferenciais do Instituto Regenere em relação ao Doutor Feridas? O que fará os hospitais e médicos preferirem o seu serviço?</label>
+                            <textarea id="competitor_differentials" name="Diferenciais vs Doutor Feridas" rows="4" placeholder="Ex: Nosso foco em abordagem integrativa multidisciplinar real, velocidade na resposta de atendimento home care, suporte direto aos consultórios médicos para reabilitação do paciente, auxílio burocrático simplificado de reembolso..." required></textarea>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="clinical_proof">Você possui casos de sucesso documentados, pesquisas, estatísticas de tempo médio de cicatrização reduzido ou depoimentos reais que possamos colocar como Prova Social para gerar credibilidade?</label>
+                            <textarea id="clinical_proof" name="Casos de Sucesso e Testemunhos" rows="4" placeholder="Insira resumos de depoimentos, parcerias com hospitais locais ou conquistas clínicas que validem o atendimento humanizado do Instituto..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 4: Estrutura do Site & WhatsApp Leads -->
+                <div class="form-step" data-step="4" id="step-4-panel">
+                    <div class="step-header">
+                        <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+                        <h2>Estrutura do Site e Conversão em WhatsApp</h2>
+                        <p>Como o contato e o agendamento serão unificados via WhatsApp, vamos desenhar o mapa de seções do site institucional para estruturar a navegação por completo.</p>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="input-control required">
+                            <label>Quais páginas e seções estruturais você visualiza para o portal institucional por inteiro?</label>
+                            <div class="tag-selector-grid">
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Página Inicial (Home)" checked disabled>
+                                    <span>Página Inicial (Home)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Quem Somos / O Instituto" checked disabled>
+                                    <span>Quem Somos (Apresentação)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Catálogo Técnico de Feridas e Tratamentos" checked disabled>
+                                    <span>Especialidades e Feridas</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Equipe e Profissionais Clínicos" checked>
+                                    <span>Profissionais / Equipe</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Espaço Físico / Nossa Clínica (Inauguração)" checked>
+                                    <span>Clínica / Espaço Físico</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Dúvidas Frequentes (FAQ)" checked>
+                                    <span>Perguntas Frequentes (FAQ)</span>
+                                </label>
+                                <label class="tag-chip">
+                                    <input type="checkbox" name="Estrutura do Site[]" value="Canal Exclusivo para Médicos & Parceiros B2B">
+                                    <span>Canal do Médico (B2B)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-control required">
+                            <label>Para a conversão qualificada no WhatsApp, quais dados mínimos você gostaria que o formulário de contato do site coletasse antes de direcionar o lead para o chat?</label>
+                            <div class="custom-checkbox-group">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Nome e Telefone de contato" checked disabled>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Nome e WhatsApp (Obrigatório)</strong>
+                                        Dados básicos para início imediato do diálogo.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Perfil do Lead (Paciente / Familiar / Médico / Hospital)" checked>
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Perfil do Lead</strong>
+                                        Identificar se quem está entrando em contato é o próprio paciente, um familiar, um médico encaminhador ou um parceiro institucional.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Tipo de Lesão / Dúvida Clínica">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Tipo de Lesão / Sintoma</strong>
+                                        Campo de seleção (pé diabético, escara, curativo pós-cirurgia, estoma, outro) para agilizar a triagem técnica pela enfermeira de plantão.
+                                    </span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="Dados Formulário Leads[]" value="Necessidade de Atendimento Domiciliar (Home Care) ou Ambulatório">
+                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-label">
+                                        <strong>Modalidade Pretendida</strong>
+                                        Saber se o paciente precisa de atendimento domiciliar imediato ou está buscando o ambulatório físico.
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-grid">
+                            <div class="input-control required">
+                                <label for="clinic_whatsapp">Qual será o número de WhatsApp para atendimento e agendamentos?</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <input type="tel" id="clinic_whatsapp" name="WhatsApp de Atendimento da Clínica" placeholder="Ex: (38) 99999-9999" required>
+                                </div>
+                            </div>
+
+                            <div class="input-control required">
+                                <label for="inst_launch_date">Qual a data de lançamento ideal para o portal?</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    <input type="text" id="inst_launch_date" name="Prazo de Lançamento" placeholder="Ex: Em 20 dias, até o fim deste mês..." required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Painel de Confirmação & Segurança para envio -->
+                        <div class="confirmation-card">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div class="confirmation-content">
+                                <h4>Pronto para enviar!</h4>
+                                <p>Ao clicar em enviar, os dados serão encaminhados com total segurança para o e-mail **carlosermenezes@gmail.com**. A sua cópia de backup do briefing ficará guardada localmente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação/Navegação -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="btn-prev" disabled>
+                        <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btn-next">
+                        Avançar <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button type="submit" class="btn btn-success" id="btn-submit" style="display: none;">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Briefing Estrutural
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Tela de Sucesso - Renderizada Dinamicamente ou pós-submit -->
+    <div class="success-screen" id="success-screen" style="display: none;">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fa-solid fa-heart-circle-check"></i>
+            </div>
+            <h2>Muito Obrigado!</h2>
+            <h3>O Briefing do Instituto Regenere foi enviado com sucesso!</h3>
+            <p>Todas as orientações estruturais e técnicas foram compiladas. Já temos as informações necessárias para dar vida ao site institucional completo com alto poder de conversão via WhatsApp.</p>
+            
+            <div class="download-box">
+                <h4>Guarde uma cópia ou envie por WhatsApp:</h4>
+                <p class="download-desc">Como garantia adicional, você pode baixar o relatório em formato de texto das respostas ou enviá-las imediatamente via WhatsApp para o Carlos.</p>
+                <div class="success-buttons">
+                    <button class="btn btn-outline" id="btn-download-json">
+                        <i class="fa-solid fa-file-arrow-down"></i> Baixar Relatório (TXT)
+                    </button>
+                    <button class="btn btn-outline" id="btn-copy-clipboard">
+                        <i class="fa-solid fa-copy"></i> Copiar Respostas
+                    </button>
+                    <button class="btn btn-whatsapp" id="btn-whatsapp-share">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="btn-restart" style="margin-top: 2rem;">
+                <i class="fa-solid fa-rotate-left"></i> Visualizar ou Editar Respostas
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

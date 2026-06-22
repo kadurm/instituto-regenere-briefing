@@ -1,405 +1,355 @@
-/**
- * Script Principal - Briefing Interativo do Instituto Regenere
- * Desenvolvido para Carlos Eduardo - DevOps_KrM
- */
+/* Script Principal - Instituto Regenere */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM Elements ---
-    const form = document.getElementById('briefing-form');
-    const steps = Array.from(document.querySelectorAll('.form-step'));
-    const stepItems = Array.from(document.querySelectorAll('.step-item'));
-    const btnPrev = document.getElementById('btn-prev');
-    const btnNext = document.getElementById('btn-next');
-    const btnSubmit = document.getElementById('btn-submit');
-    const progressFill = document.getElementById('progress-fill');
-    const progressPercentage = document.getElementById('progress-percentage');
-    const mobileProgressBar = document.getElementById('mobile-progress-bar');
-    const mobileCurrentStep = document.getElementById('mobile-current-step');
-    const mobileStepName = document.getElementById('mobile-step-name');
-    const successScreen = document.getElementById('success-screen');
-    const mainApp = document.getElementById('briefing-app');
 
-    // Success Screen Buttons
-    const btnDownloadJson = document.getElementById('btn-download-json');
-    const btnCopyClipboard = document.getElementById('btn-copy-clipboard');
-    const btnWhatsappShare = document.getElementById('btn-whatsapp-share');
-    const btnRestart = document.getElementById('btn-restart');
+    /* ==========================================
+       1. Menu Mobile Toggle
+       ========================================== */
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    let currentStep = 1;
-    const totalSteps = steps.length;
-    
-    // Nomes legíveis dos passos para exibição no Mobile
-    const stepNames = {
-        1: "Sobre o Instituto",
-        2: "Nuances Clínicas",
-        3: "Diferenciais",
-        4: "Estrutura & Leads"
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em qualquer link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    /* ==========================================
+       2. Header Scrolled & Scroll Spy Active Link
+       ========================================== */
+    const header = document.getElementById('header');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        // Efeito Scrolled no Header
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Scroll Spy (Indicador de seção ativa)
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    /* ==========================================
+       3. Dataset das Especialidades (Feridas)
+       ========================================== */
+    const woundData = {
+        diabetico: {
+            title: "Pé Diabético",
+            icon: "🦶",
+            description: "O pé diabético é uma complicação grave da diabetes mellitus, caracterizada pelo surgimento de feridas que não cicatrizam devido à neuropatia periférica (perda da sensibilidade ao toque e dor) e à microangiopatia (má circulação do sangue). Sem a dor para alertar, pequenas lesões evoluem rapidamente para úlceras complexas com risco de infecção óssea (osteomielite) e amputação.",
+            treatment: "Nossa abordagem no Instituto Regenere é altamente protetora e reconstrutiva. Realizamos avaliações vasculares locais, desbridamento instrumental preciso dos tecidos necrosados, aplicação de curativos especiais com prata nanocristalina e alginatos para controle infeccioso, além de sessões de Laserterapia de Baixa Intensidade para acelerar a regeneração e orientação de palmilhas/sapatos protetores."
+        },
+        venosas: {
+            title: "Úlceras Venosas",
+            icon: "🩸",
+            description: "As úlceras venosas são feridas crônicas e úmidas que acometem os membros inferiores, comumente próximas ao tornozelo. Originam-se devido à insuficiência venosa crônica (varizes ou sequelas de trombose), onde o sangue tem dificuldade de retornar ao coração, acumulando-se nas pernas e causando inchaço severo, escurecimento da pele e posterior rompimento tecidual.",
+            treatment: "O tratamento padrão-ouro no Instituto alia limpeza fisiológica avançada ao controle do exsudato (secreção da ferida) e à aplicação de Terapia Compressiva. Utilizamos a Bota de Unna ou bandagens elásticas/inelásticas multicamadas, que comprimem as veias de forma terapêutica, reestabelecendo a circulação de retorno e gerando cicatrização rápida das úlceras venosas."
+        },
+        arteriais: {
+            title: "Úlceras Arteriais",
+            icon: "🩺",
+            description: "As úlceras arteriais são causadas pela falta de oxigenação adequada dos tecidos devido à obstrução ou estreitamento das artérias periféricas (aterosclerose). São lesões extremamente dolorosas, de aspecto seco, bordas bem delimitadas, localizadas principalmente nas pontas dos dedos, dorso do pé ou calcanhar, onde o fluxo de sangue é crítico.",
+            treatment: "O foco terapêutico do Instituto é a máxima preservação tecidual. Mantemos o leito da lesão protegido contra infecções bacterianas através de coberturas hidroativas ou com prata, modulamos a umidade na medida correta e atuamos de forma conjunta com cirurgiões vasculares para avaliar a necessidade urgente de revascularização arterial periférica."
+        },
+        escaras: {
+            title: "Lesões por Pressão (Escaras)",
+            icon: "🛏️",
+            description: "Anteriormente conhecidas como escaras, estas lesões são causadas pela compressão prolongada da pele e tecidos sobre proeminências ósseas (como calcanhar, quadril e região sacral). É comum em idosos, cadeirantes, pacientes acamados ou sob cuidados intensivos, onde a fricção e falta de circulação local rompem as camadas da pele.",
+            treatment: "Combatemos ativamente a lesão utilizando curativos biológicos de última geração (hidrocoloides, hidrogéis com alginato) que promovem o desbridamento autolítico e o surgimento de tecido de granulação saudável. Associamos a Laserterapia para estimular a circulação profunda e cicatrização rápida, fornecendo treinamento prático aos cuidadores para reposicionamento e alívio de pressão."
+        },
+        cirurgica: {
+            title: "Deiscência Cirúrgica",
+            icon: "✂️",
+            description: "Consiste na abertura espontânea e indesejada de pontos cirúrgicos pós-operatórios. Pode ser causada por estresse mecânico precoce no local, infecções locais da ferida operatória, má circulação tecidual ou desnutrição sistêmica do paciente, expondo os tecidos internos e aumentando o risco de contaminação.",
+            treatment: "Promovemos a limpeza profunda do leito exposto, eliminamos a carga bacteriana através de curativos avançados com ação antimicrobiana (como prata e PHMB) e estimulamos o fechamento por segunda intenção. A aplicação da Laserterapia de Baixa Intensidade é fundamental nesse caso, acelerando a deposição de colágeno estruturado e minimizando cicatrizes hipertróficas."
+        },
+        estomas: {
+            title: "Cuidados com Estomas",
+            icon: "🛡️",
+            description: "O estoma ou ostomia é uma abertura criada cirurgicamente no abdômen para desvio do trânsito de fezes ou urina. A pele ao redor do estoma (periestoma) fica constantemente exposta a secreções ácidas e úmidas, necessitando de cuidados meticulosos para evitar dermatites, queimaduras químicas e infecções fúngicas ou bacterianas dolorosas.",
+            treatment: "Prestamos consultoria e assistência personalizada de enfermagem estomaterapeuta. Realizamos a higienização da área, a mensuração correta do estoma, a indicação, corte e fixação de placas e bolsas coletoras de alto desempenho, além do uso de pós e películas protetoras da pele para prevenir e tratar qualquer lesão cutânea dolorosa."
+        }
     };
 
-    // --- 1. CONFIGURAÇÃO DE E-MAIL E URL ---
-    // E-mail padrão do Carlos (se não fornecido na URL ou painel)
-    const DEFAULT_DEV_EMAIL = 'carlosermenezes@gmail.com';
-    
-    // Recupera o email da URL (?email=exemplo@dominio.com ou ?to=exemplo@dominio.com)
-    const urlParams = new URLSearchParams(window.location.search);
-    let targetEmail = urlParams.get('email') || urlParams.get('to') || localStorage.getItem('regenere_dev_email');
-    
-    if (!targetEmail) {
-        targetEmail = DEFAULT_DEV_EMAIL;
-    } else {
-        localStorage.setItem('regenere_dev_email', targetEmail);
-    }
-    
-    updateFormAction(targetEmail);
+    /* ==========================================
+       4. Sistema do Modal de Especialidades
+       ========================================== */
+    const woundModal = document.getElementById('woundModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalBtnClose = document.getElementById('modalBtnClose');
+    const modalBtnCTA = document.getElementById('modalBtnCTA');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalTreatment = document.getElementById('modalTreatment');
+    const leadInterestSelect = document.getElementById('leadInterest');
 
-    // Configura o redirecionamento pós-envio do FormSubmit.co
-    // Quando enviado com sucesso, redirecionará para a própria página com ?success=true
-    const redirectUrl = window.location.origin + window.location.pathname + '?success=true';
-    const nextInput = document.querySelector('input[name="_next"]');
-    if (nextInput) {
-        nextInput.value = redirectUrl;
+    let currentWoundKey = '';
+
+    // Função para abrir o modal
+    function openModal(key) {
+        if (!woundData[key]) return;
+        
+        currentWoundKey = key;
+        const data = woundData[key];
+        
+        modalIcon.textContent = data.icon;
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+        modalTreatment.textContent = data.treatment;
+        
+        woundModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Impede o scroll de fundo
     }
 
-    // --- 2. CONTROLE DO FLUXO MULTI-PASSOS ---
-    function showStep(stepNum) {
-        // Oculta passos inativos e exibe o ativo
-        steps.forEach(step => {
-            step.classList.remove('active-step');
-            if (parseInt(step.getAttribute('data-step')) === stepNum) {
-                step.classList.add('active-step');
-            }
+    // Função para fechar o modal
+    function closeModal() {
+        woundModal.classList.remove('active');
+        document.body.style.overflow = ''; // Devolve o scroll de fundo
+    }
+
+    // Configura cliques nos cards de especialidade
+    const specialtyCards = document.querySelectorAll('.specialty-card');
+    specialtyCards.forEach(card => {
+        const woundKey = card.getAttribute('data-wound');
+        
+        // Clicar no card inteiro ou no botão "Saiba Mais"
+        card.addEventListener('click', () => {
+            openModal(woundKey);
         });
+    });
 
-        // Atualiza a navegação lateral (Desktop)
-        stepItems.forEach(item => {
-            const itemStep = parseInt(item.getAttribute('data-step'));
-            item.classList.remove('active');
-            item.classList.remove('completed');
+    // Configura botões de fechar modal
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBtnClose) modalBtnClose.addEventListener('click', closeModal);
+    
+    // Fecha clicando fora da caixa do modal
+    window.addEventListener('click', (e) => {
+        if (e.target === woundModal) {
+            closeModal();
+        }
+    });
+
+    // Ação do botão CTA do modal: direciona ao formulário e altera o select
+    if (modalBtnCTA) {
+        modalBtnCTA.addEventListener('click', () => {
+            closeModal();
             
-            if (itemStep === stepNum) {
-                item.classList.add('active');
-            } else if (itemStep < stepNum) {
-                item.classList.add('completed');
-            }
-        });
-
-        // Atualiza botões
-        if (stepNum === 1) {
-            btnPrev.disabled = true;
-        } else {
-            btnPrev.disabled = false;
-        }
-
-        if (stepNum === totalSteps) {
-            btnNext.style.display = 'none';
-            btnSubmit.style.display = 'inline-flex';
-        } else {
-            btnNext.style.display = 'inline-flex';
-            btnSubmit.style.display = 'none';
-        }
-
-        // Atualiza progresso
-        updateProgress(stepNum);
-        
-        // Rola a área do formulário para o topo
-        document.querySelector('.form-area').scrollTop = 0;
-    }
-
-    function updateProgress(stepNum) {
-        currentStep = stepNum;
-        
-        // Porcentagem linear baseada no passo atual
-        const percentage = Math.round(((stepNum - 1) / (totalSteps - 1)) * 100);
-        
-        // Atualiza Desktop
-        progressFill.style.width = `${percentage}%`;
-        progressPercentage.innerText = `${percentage}%`;
-        
-        // Atualiza Mobile
-        mobileProgressBar.style.width = `${(stepNum / totalSteps) * 100}%`;
-        mobileCurrentStep.innerText = stepNum;
-        mobileStepName.innerText = stepNames[stepNum];
-    }
-
-    // Validação básica do passo atual
-    function validateStep(stepNum) {
-        const currentPanel = document.querySelector(`.form-step[data-step="${stepNum}"]`);
-        const requiredInputs = Array.from(currentPanel.querySelectorAll('[required]'));
-        
-        let isValid = true;
-        
-        // Reseta estados anteriores
-        requiredInputs.forEach(input => {
-            const control = input.closest('.input-control');
-            if (control) control.classList.remove('has-error');
-        });
-
-        for (const input of requiredInputs) {
-            // Se for checkbox ou radio
-            if (input.type === 'checkbox' || input.type === 'radio') {
-                const name = input.name;
-                const checked = currentPanel.querySelectorAll(`[name="${name}"]:checked`);
-                if (checked.length === 0) {
-                    isValid = false;
-                    // Adiciona erro visual no container pai
-                    const control = input.closest('.input-control');
-                    if (control) control.classList.add('has-error');
-                }
-            } else if (!input.value.trim()) {
-                isValid = false;
-                const control = input.closest('.input-control');
-                if (control) control.classList.add('has-error');
-                input.focus();
-                break;
-            }
-        }
-
-        if (!isValid) {
-            // Feedback sutil para o usuário
-            const shakeElement = currentPanel.querySelector('.step-header');
-            if (shakeElement) {
-                shakeElement.classList.add('shake-anim');
-                setTimeout(() => shakeElement.classList.remove('shake-anim'), 500);
-            }
-        }
-        
-        return isValid;
-    }
-
-    // Eventos de Navegação
-    btnNext.addEventListener('click', () => {
-        if (validateStep(currentStep)) {
-            if (currentStep < totalSteps) {
-                showStep(currentStep + 1);
-            }
-        }
-    });
-
-    btnPrev.addEventListener('click', () => {
-        if (currentStep > 1) {
-            showStep(currentStep - 1);
-        }
-    });
-
-    // Permite clicar nos números da sidebar para navegar, contanto que já tenham sido validados
-    stepItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const target = parseInt(item.getAttribute('data-step'));
-            if (target < currentStep) {
-                showStep(target);
-            } else if (target > currentStep) {
-                // Valida passos intermediários
-                let canAdvance = true;
-                for (let i = currentStep; i < target; i++) {
-                    if (!validateStep(i)) {
-                        canAdvance = false;
-                        showStep(i);
+            // Mapeia a chave do modal para o valor exato no dropdown do formulário
+            const dropdownMapping = {
+                diabetico: "Pé Diabético",
+                venosas: "Úlcera Venosa",
+                arteriais: "Úlcera Arterial",
+                escaras: "Lesão por Pressão (Escara)",
+                cirurgica: "Deiscência Cirúrgica",
+                estomas: "Cuidados com Estomas"
+            };
+            
+            const dropdownVal = dropdownMapping[currentWoundKey] || "Não especificada";
+            
+            if (leadInterestSelect) {
+                // Tenta selecionar o valor no dropdown
+                // Nota: no HTML os valores estão no singular/plural, tratamos correspondências
+                for (let i = 0; i < leadInterestSelect.options.length; i++) {
+                    const option = leadInterestSelect.options[i];
+                    if (option.value.includes(dropdownVal) || dropdownVal.includes(option.value)) {
+                        leadInterestSelect.selectedIndex = i;
                         break;
                     }
                 }
-                if (canAdvance) {
-                    showStep(target);
-                }
+            }
+            
+            // Rola até a seção de contato de forma suave
+            const contactSection = document.getElementById('contato');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                // Dá um foco no campo de nome para melhorar a experiência
+                setTimeout(() => {
+                    const nameInput = document.getElementById('leadName');
+                    if (nameInput) nameInput.focus();
+                }, 800);
             }
         });
-    });
+    }
 
-    // --- 3. AUTO-SALVAMENTO (LOCALSTORAGE) ---
-    function saveFormData() {
-        const formData = {};
-        const inputs = form.querySelectorAll('input, textarea, select');
-        
-        inputs.forEach(input => {
-            if (input.name) {
-                if (input.type === 'checkbox') {
-                    if (!formData[input.name]) formData[input.name] = [];
-                    if (input.checked) formData[input.name].push(input.value);
-                } else if (input.type === 'radio') {
-                    if (input.checked) formData[input.name] = input.value;
-                } else {
-                    formData[input.name] = input.value;
-                }
+    // Configura cliques nos links do rodapé que direcionam a especialidades específicas
+    const footerWoundLinks = document.querySelectorAll('[data-wound-footer]');
+    footerWoundLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const woundKey = link.getAttribute('data-wound-footer');
+            
+            // Rola até a seção de especialidades
+            const specialtiesSection = document.getElementById('especialidades');
+            if (specialtiesSection) {
+                specialtiesSection.scrollIntoView({ behavior: 'smooth' });
             }
-        });
-        
-        localStorage.setItem('regenere_briefing_draft', JSON.stringify(formData));
-    }
-
-    function loadFormData() {
-        const draft = localStorage.getItem('regenere_briefing_draft');
-        if (!draft) return;
-
-        try {
-            const data = JSON.parse(draft);
-            const inputs = form.querySelectorAll('input, textarea, select');
             
-            inputs.forEach(input => {
-                if (input.name && data[input.name] !== undefined) {
-                    if (input.type === 'checkbox') {
-                        if (Array.isArray(data[input.name])) {
-                            input.checked = data[input.name].includes(input.value);
-                        }
-                    } else if (input.type === 'radio') {
-                        input.checked = (data[input.name] === input.value);
-                    } else {
-                        input.value = data[input.name];
-                    }
-                }
-            });
-        } catch (e) {
-            console.error("Erro ao carregar rascunho de dados:", e);
-        }
-    }
-
-    // Escuta mudanças nos inputs para salvar
-    form.addEventListener('input', saveFormData);
-    form.addEventListener('change', saveFormData);
-    
-    // Carrega dados salvos na inicialização
-    loadFormData();
-
-    // --- 4. EXIBIÇÃO DA TELA DE SUCESSO ---
-    // Verifica se a página foi carregada com ?success=true na URL
-    if (urlParams.get('success') === 'true') {
-        mainApp.style.display = 'none';
-        successScreen.style.display = 'flex';
-        
-        // Faz backup das respostas antes de limpar, para que as exportações funcionem
-        const currentDraft = localStorage.getItem('regenere_briefing_draft');
-        if (currentDraft) {
-            localStorage.setItem('regenere_briefing_completed_backup', currentDraft);
-        }
-        
-        // Limpa o rascunho ativo após o envio bem-sucedido
-        localStorage.removeItem('regenere_briefing_draft');
-    }
-
-    // --- 5. EXPORTAÇÃO E COMPARTILHAMENTO DAS RESPOSTAS ---
-    // Compila os dados do briefing em formato legível de texto (Markdown)
-    function compileResponsesToText() {
-        const draft = localStorage.getItem('regenere_briefing_draft') || localStorage.getItem('regenere_briefing_completed_backup');
-        let data = {};
-        
-        if (draft) {
-            data = JSON.parse(draft);
-        } else {
-            // Fallback se já tiver sido apagado por sucesso
-            const inputs = form.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                if (input.name) {
-                    if (input.type === 'checkbox') {
-                        if (!data[input.name]) data[input.name] = [];
-                        if (input.checked) data[input.name].push(input.value);
-                    } else if (input.type === 'radio') {
-                        if (input.checked) data[input.name] = input.value;
-                    } else {
-                        data[input.name] = input.value;
-                    }
-                }
-            });
-        }
-
-        let report = `==================================================\n`;
-        report += `   BRIEFING DE SITE INSTITUCIONAL - INSTITUTO REGENERE\n`;
-        report += `   Gerado em: ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}\n`;
-        report += `==================================================\n\n`;
-
-        for (const [key, value] of Object.entries(data)) {
-            if (key.startsWith('_')) continue; // Ignora configs do FormSubmit
-            
-            report += `▶ ${key.toUpperCase()}:\n`;
-            if (Array.isArray(value)) {
-                if (value.length === 0) report += `  [Nenhuma opção selecionada]\n`;
-                value.forEach(val => report += `  - ${val}\n`);
-            } else {
-                report += `  ${value || '[Não informado]'}\n`;
-            }
-            report += `\n`;
-        }
-        
-        report += `==================================================\n`;
-        report += `Fim do Briefing. Obrigado!\n`;
-        report += `Instituto Regenere & Equipe de Desenvolvimento\n`;
-        
-        return report;
-    }
-
-    // Botão de Download (TXT)
-    btnDownloadJson.addEventListener('click', () => {
-        const text = compileResponsesToText();
-        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `briefing-instituto-regenere-${new Date().toISOString().slice(0,10)}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    });
-
-    // Botão de Copiar para Área de Transferência
-    btnCopyClipboard.addEventListener('click', () => {
-        const text = compileResponsesToText();
-        navigator.clipboard.writeText(text).then(() => {
-            // Altera visualmente o botão indicando sucesso
-            const originalHTML = btnCopyClipboard.innerHTML;
-            btnCopyClipboard.innerHTML = `<i class="fa-solid fa-check"></i> Copiado com Sucesso!`;
-            btnCopyClipboard.style.borderColor = 'var(--color-success)';
-            btnCopyClipboard.style.color = 'var(--color-success)';
-            
+            // Abre o modal após a rolagem começar
             setTimeout(() => {
-                btnCopyClipboard.innerHTML = originalHTML;
-                btnCopyClipboard.style.borderColor = '';
-                btnCopyClipboard.style.color = '';
-            }, 2500);
-        }).catch(err => {
-            alert('Não foi possível copiar automaticamente. Por favor, selecione e copie manualmente.');
+                openModal(woundKey);
+            }, 600);
         });
     });
 
-    // Botão de Compartilhar no WhatsApp
-    btnWhatsappShare.addEventListener('click', () => {
-        // Reduz o tamanho da mensagem para caber na URL do WhatsApp
-        const draft = localStorage.getItem('regenere_briefing_draft') || localStorage.getItem('regenere_briefing_completed_backup');
-        let data = {};
-        if (draft) data = JSON.parse(draft);
-
-        const clientName = data["Nome do Cliente"] || "Cliente";
-        const clientEmail = data["E-mail"] || "";
-        const deadline = data["Prazo Desejado"] || "A combinar";
-        
-        let text = `Olá! Concluí o preenchimento do Briefing para o novo site do *Instituto Regenere*! 🌿\n\n`;
-        text += `*Cliente:* ${clientName}\n`;
-        text += `*E-mail:* ${clientEmail}\n`;
-        text += `*Prazo sugerido:* ${deadline}\n\n`;
-        text += `As respostas completas foram salvas e enviadas! Você também pode baixar o relatório em TXT ou copiar o sumário completo diretamente na tela final do formulário.\n\n`;
-        text += `Aguardo os próximos passos! 😊`;
-
-        const encodedText = encodeURIComponent(text);
-        // Abre o WhatsApp enviando a mensagem diretamente para o número do Carlos
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=5538988450377&text=${encodedText}`;
-        window.open(whatsappUrl, '_blank');
+    /* ==========================================
+       5. FAQ Accordion
+       ========================================== */
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const faqItem = btn.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Fecha todos os FAQs ativos (Comportamento de acordeão exclusivo)
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Se o clicado não estava ativo, abre
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
     });
 
-    // Botão de Reiniciar/Editar
-    btnRestart.addEventListener('click', () => {
-        // Remove o ?success=true da URL
-        const cleanUrl = window.location.origin + window.location.pathname;
-        window.location.href = cleanUrl;
-    });
+    /* ==========================================
+       6. Máscara de Telefone Automática (WhatsApp)
+       ========================================== */
+    const phoneInput = document.getElementById('leadPhone');
 
-    // --- 6. PAINEL DO DESENVOLVEDOR ---
-    function updateFormAction(email) {
-        if (email && email !== DEFAULT_DEV_EMAIL) {
-            form.action = `https://formsubmit.co/${email}`;
-        } else {
-            form.action = `https://formsubmit.co/${DEFAULT_DEV_EMAIL}`;
-        }
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let inputVal = e.target.value.replace(/\D/g, ""); // Remove não numéricos
+            
+            if (inputVal.length > 11) {
+                inputVal = inputVal.substring(0, 11);
+            }
+            
+            let formattedVal = "";
+            
+            if (inputVal.length > 0) {
+                formattedVal = "(" + inputVal.substring(0, 2);
+            }
+            if (inputVal.length > 2) {
+                formattedVal += ") " + inputVal.substring(2, 7);
+            }
+            if (inputVal.length > 7) {
+                formattedVal += "-" + inputVal.substring(7, 11);
+            }
+            
+            e.target.value = formattedVal;
+        });
     }
 
+    /* ==========================================
+       7. Validação do Formulário e Envio WhatsApp
+       ========================================== */
+    const whatsappForm = document.getElementById('whatsappForm');
 
-
-    // Inicialização do Passo 1
-    showStep(1);
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede o reload da página
+            
+            const nameInput = document.getElementById('leadName');
+            const phoneInput = document.getElementById('leadPhone');
+            const profileSelect = document.getElementById('leadProfile');
+            const interestSelect = document.getElementById('leadInterest');
+            const messageTextarea = document.getElementById('leadMessage');
+            
+            let isValid = true;
+            
+            // Valida Nome
+            if (!nameInput.value.trim()) {
+                nameInput.parentElement.classList.add('invalid');
+                isValid = false;
+            } else {
+                nameInput.parentElement.classList.remove('invalid');
+            }
+            
+            // Valida Telefone (Mínimo de caracteres para ser um celular brasileiro válido)
+            const cleanPhone = phoneInput.value.replace(/\D/g, "");
+            if (cleanPhone.length < 10) { // DDD + Número (Mínimo 10 dígitos)
+                phoneInput.parentElement.classList.add('invalid');
+                isValid = false;
+            } else {
+                phoneInput.parentElement.classList.remove('invalid');
+            }
+            
+            // Valida Perfil do Lead
+            if (!profileSelect.value) {
+                profileSelect.parentElement.classList.add('invalid');
+                isValid = false;
+            } else {
+                profileSelect.parentElement.classList.remove('invalid');
+            }
+            
+            if (!isValid) return; // Interrompe se inválido
+            
+            // Construção da mensagem estruturada profissional para o WhatsApp
+            const clinicPhone = "5538984290656"; // Número da clínica com DDI 55
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value;
+            const profile = profileSelect.value;
+            const interest = interestSelect.value;
+            const rawMessage = messageTextarea.value.trim();
+            
+            let textMessage = `Olá, Instituto Regenere! Gostaria de agendar uma avaliação clínica.\n\n`;
+            textMessage += `*DADOS DO PRÉ-CADASTRO:*\n`;
+            textMessage += `• *Paciente:* ${name}\n`;
+            textMessage += `• *WhatsApp:* ${phone}\n`;
+            textMessage += `• *Perfil do Solicitante:* ${profile}\n`;
+            textMessage += `• *Ferida/Lesão Principal:* ${interest}\n`;
+            
+            if (rawMessage) {
+                textMessage += `\n*Relato do Caso:*\n"${rawMessage}"`;
+            }
+            
+            // URL encode
+            const encodedText = encodeURIComponent(textMessage);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${clinicPhone}&text=${encodedText}`;
+            
+            // Redireciona para o WhatsApp oficial da clínica
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        // Remove classes invalid ao digitar/selecionar
+        const formInputs = whatsappForm.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                input.parentElement.classList.remove('invalid');
+            });
+            input.addEventListener('change', () => {
+                input.parentElement.classList.remove('invalid');
+            });
+        });
+    }
 });
