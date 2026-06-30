@@ -1523,7 +1523,11 @@ h1, h2, h3, h4 {
     }
     
     .hero-title {
-        font-size: 1.5rem; /* Reduzido para caber em exatamente 2 linhas no mobile */
+        font-size: 1.7rem; /* Aumentado um pouco, mantendo as 2 linhas */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.0rem; /* Ajustado para dar melhor contraste com o título */
     }
     
     .hero-buttons {
@@ -1604,7 +1608,11 @@ h1, h2, h3, h4 {
 /* Celular Pequeno */
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 1.2rem; /* Reduzido para garantir 2 linhas em celulares menores */
+        font-size: 1.45rem; /* Aumentado um pouco, mantendo as 2 linhas */
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem; /* Ajustado para melhor hierarquia visual */
     }
 
     .about-info .section-title {
@@ -1634,7 +1642,11 @@ h1, h2, h3, h4 {
 /* Celular Muito Pequeno */
 @media (max-width: 380px) {
     .hero-title {
-        font-size: 1.05rem; /* Garante que cabe em exatamente 2 linhas em telas minúsculas */
+        font-size: 1.3rem; /* Aumentado um pouco, mantendo as 2 linhas */
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem; /* Ajustado para melhor hierarquia visual */
     }
 
     .about-info .section-title {
