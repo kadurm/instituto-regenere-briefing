@@ -115,7 +115,7 @@ h1, h2, h3, h4 {
 }
 
 .about-info .section-title {
-    font-size: 2.1rem; /* Reduzido para caber em uma única linha no desktop */
+    font-size: 2.2rem; /* Alinhado ao padrão do hero */
 }
 
 .contact-info-text .section-title {
@@ -595,7 +595,7 @@ h1, h2, h3, h4 {
 }
 
 .about-text-lead {
-    font-size: 1.25rem;
+    font-size: 1.15rem; /* Ajustado para padrão do hero */
     color: var(--color-primary);
     font-weight: 500;
     margin-bottom: 24px;
@@ -1531,6 +1531,14 @@ h1, h2, h3, h4 {
     .about-info .section-title {
         font-size: 1.5rem; /* Reduzido para caber em uma única linha no tablet/celular */
     }
+
+    .about-text-lead {
+        font-size: 0.9rem; /* Ajustado para padrão do hero */
+    }
+
+    .about-info .section-tag {
+        font-size: 0.9rem; /* Ajustado para padrão do hero */
+    }
     
     .contact-info-text .section-title {
         font-size: 1.3rem; /* Reduzido para caber em uma única linha no tablet/celular */
@@ -1654,7 +1662,15 @@ h1, h2, h3, h4 {
     }
 
     .about-info .section-title {
-        font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
+        font-size: 1.25rem; /* Ajustado para padrão do hero */
+    }
+
+    .about-text-lead {
+        font-size: 0.8rem; /* Ajustado para padrão do hero */
+    }
+
+    .about-info .section-tag {
+        font-size: 0.8rem; /* Ajustado para padrão do hero */
     }
     
     .contact-info-text .section-title {
@@ -1700,8 +1716,16 @@ h1, h2, h3, h4 {
     }
 
     .about-info .section-title {
-        font-size: 1.02rem; /* Força caber em uma única linha em telas minúsculas */
+        font-size: 1.1rem; /* Ajustado para padrão do hero */
         letter-spacing: -0.5px;
+    }
+
+    .about-text-lead {
+        font-size: 0.75rem; /* Ajustado para padrão do hero */
+    }
+
+    .about-info .section-tag {
+        font-size: 0.75rem; /* Ajustado para padrão do hero */
     }
     
     .contact-info-text .section-title {
