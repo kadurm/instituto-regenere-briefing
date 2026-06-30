@@ -569,7 +569,7 @@ h1, h2, h3, h4 {
 }
 
 .highlight-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.6rem; /* Ajustado para padrão premium coerente com o hero */
     color: var(--color-primary-dark);
     margin-bottom: 16px;
 }
@@ -1548,6 +1548,14 @@ h1, h2, h3, h4 {
         font-size: 0.9rem; /* Mesmo tamanho do subtítulo no mobile */
     }
     
+    .highlight-card h3 {
+        font-size: 1.5rem; /* Ajustado para padrão de título do hero no mobile */
+    }
+    
+    .highlight-card p {
+        font-size: 0.9rem; /* Ajustado para padrão de subtítulo do hero no mobile */
+    }
+    
     .hero-buttons {
         flex-direction: column;
         gap: 12px;
@@ -1637,6 +1645,14 @@ h1, h2, h3, h4 {
         font-size: 0.8rem; /* Mesmo tamanho do subtítulo */
     }
 
+    .highlight-card h3 {
+        font-size: 1.25rem; /* Ajustado para padrão de título do hero no mobile */
+    }
+    
+    .highlight-card p {
+        font-size: 0.8rem; /* Ajustado para padrão de subtítulo do hero no mobile */
+    }
+
     .about-info .section-title {
         font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
     }
@@ -1673,6 +1689,14 @@ h1, h2, h3, h4 {
 
     .hero-tag {
         font-size: 0.75rem; /* Mesmo tamanho do subtítulo */
+    }
+
+    .highlight-card h3 {
+        font-size: 1.1rem; /* Ajustado para padrão de título do hero no mobile */
+    }
+    
+    .highlight-card p {
+        font-size: 0.75rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
     .about-info .section-title {
