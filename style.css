@@ -823,13 +823,13 @@ h1, h2, h3, h4 {
 }
 
 .tech-highlight-content h4 {
-    font-size: 1.35rem;
+    font-size: 1.6rem; /* Ajustado para padrão premium */
     color: var(--color-gold);
     margin-bottom: 8px;
 }
 
 .tech-highlight-content p {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Ajustado para padrão premium */
     opacity: 0.9;
     line-height: 1.6;
 }
@@ -1542,14 +1542,16 @@ h1, h2, h3, h4 {
     
     .specialty-card h3,
     .therapy-card h3,
-    .team-info h3 {
+    .team-info h3,
+    .tech-highlight-content h4 {
         font-size: 1.5rem; /* Alinhado ao padrão do hero no mobile */
     }
 
     .specialty-card p,
     .therapy-card p,
     .team-desc,
-    .faq-answer p {
+    .faq-answer p,
+    .tech-highlight-content p {
         font-size: 0.9rem; /* Alinhado ao padrão do hero no mobile */
     }
 
@@ -1687,7 +1689,8 @@ h1, h2, h3, h4 {
     .highlight-card h3,
     .specialty-card h3,
     .therapy-card h3,
-    .team-info h3 {
+    .team-info h3,
+    .tech-highlight-content h4 {
         font-size: 1.25rem; /* Ajustado para padrão de título do hero no mobile */
     }
     
@@ -1695,7 +1698,8 @@ h1, h2, h3, h4 {
     .specialty-card p,
     .therapy-card p,
     .team-desc,
-    .faq-answer p {
+    .faq-answer p,
+    .tech-highlight-content p {
         font-size: 0.8rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
@@ -1759,7 +1763,8 @@ h1, h2, h3, h4 {
     .highlight-card h3,
     .specialty-card h3,
     .therapy-card h3,
-    .team-info h3 {
+    .team-info h3,
+    .tech-highlight-content h4 {
         font-size: 1.1rem; /* Ajustado para padrão de título do hero no mobile */
     }
     
@@ -1767,7 +1772,8 @@ h1, h2, h3, h4 {
     .specialty-card p,
     .therapy-card p,
     .team-desc,
-    .faq-answer p {
+    .faq-answer p,
+    .tech-highlight-content p {
         font-size: 0.75rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
