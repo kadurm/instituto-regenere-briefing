@@ -402,6 +402,16 @@ h1, h2, h3, h4 {
     animation: fadeInUp 1s ease;
 }
 
+.hero-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-gold);
+    margin-bottom: 12px;
+}
+
 .hero-title {
     font-size: 2.2rem; /* Reduzido para caber em exatamente 2 linhas */
     color: var(--color-primary-dark);
@@ -1533,6 +1543,10 @@ h1, h2, h3, h4 {
     .hero-subtitle {
         font-size: 1.0rem; /* Ajustado para dar melhor contraste com o título */
     }
+
+    .hero-tag {
+        font-size: 1.0rem; /* Mesmo tamanho do subtítulo no mobile */
+    }
     
     .hero-buttons {
         flex-direction: column;
@@ -1619,6 +1633,10 @@ h1, h2, h3, h4 {
         font-size: 0.9rem; /* Ajustado para melhor hierarquia visual */
     }
 
+    .hero-tag {
+        font-size: 0.9rem; /* Mesmo tamanho do subtítulo */
+    }
+
     .about-info .section-title {
         font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
     }
@@ -1651,6 +1669,10 @@ h1, h2, h3, h4 {
 
     .hero-subtitle {
         font-size: 0.85rem; /* Ajustado para melhor hierarquia visual */
+    }
+
+    .hero-tag {
+        font-size: 0.85rem; /* Mesmo tamanho do subtítulo */
     }
 
     .about-info .section-title {
