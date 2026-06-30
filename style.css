@@ -1527,7 +1527,7 @@ h1, h2, h3, h4 {
     }
     
     .hero-title {
-        font-size: 1.7rem; /* Aumentado um pouco, mantendo as 2 linhas */
+        font-size: 1.5rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
     }
     
     .hero-subtitle {
@@ -1612,7 +1612,7 @@ h1, h2, h3, h4 {
 /* Celular Pequeno */
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 1.45rem; /* Aumentado um pouco, mantendo as 2 linhas */
+        font-size: 1.25rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
     }
 
     .hero-subtitle {
@@ -1646,7 +1646,7 @@ h1, h2, h3, h4 {
 /* Celular Muito Pequeno */
 @media (max-width: 380px) {
     .hero-title {
-        font-size: 1.3rem; /* Aumentado um pouco, mantendo as 2 linhas */
+        font-size: 1.1rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
     }
 
     .hero-subtitle {
