@@ -1480,7 +1480,7 @@ h1, h2, h3, h4 {
 
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 56px;
+        gap: 24px; /* Reduzido o espaço entre o texto/botões e a foto */
         padding-top: 15px; /* Reduzido para aproximar o texto da barra superior */
     }
     
