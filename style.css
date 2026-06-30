@@ -1539,6 +1539,10 @@ h1, h2, h3, h4 {
     .about-info .section-tag {
         font-size: 0.9rem; /* Ajustado para padrão do hero */
     }
+
+    .about-info p {
+        font-size: 0.85rem; /* Ajustado para manter a hierarquia abaixo do lead */
+    }
     
     .contact-info-text .section-title {
         font-size: 1.3rem; /* Reduzido para caber em uma única linha no tablet/celular */
@@ -1672,6 +1676,10 @@ h1, h2, h3, h4 {
     .about-info .section-tag {
         font-size: 0.8rem; /* Ajustado para padrão do hero */
     }
+
+    .about-info p {
+        font-size: 0.75rem; /* Ajustado para manter a hierarquia abaixo do lead */
+    }
     
     .contact-info-text .section-title {
         font-size: 1.05rem; /* Garante que cabe em uma linha em celulares menores */
@@ -1726,6 +1734,10 @@ h1, h2, h3, h4 {
 
     .about-info .section-tag {
         font-size: 0.75rem; /* Ajustado para padrão do hero */
+    }
+
+    .about-info p {
+        font-size: 0.7rem; /* Ajustado para manter a hierarquia abaixo do lead */
     }
     
     .contact-info-text .section-title {
