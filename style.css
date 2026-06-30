@@ -1262,83 +1262,6 @@ h1, h2, h3, h4 {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
-    gap: 48px;
-    padding: 80px 24px 48px;
-}
-
-.brand-slogan {
-    font-size: 0.9rem;
-    opacity: 0.75;
-    margin: 20px 0;
-    max-width: 320px;
-}
-
-.social-links {
-    display: flex;
-    gap: 12px;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    transition: var(--transition-fast);
-}
-
-.social-icon:hover {
-    background-color: var(--color-gold);
-    color: var(--color-primary-dark);
-}
-
-.social-icon svg {
-    width: 18px;
-    height: 18px;
-}
-
-.footer-links h4, .footer-contact h4 {
-    font-size: 1.1rem;
-    color: var(--color-gold);
-    margin-bottom: 24px;
-}
-
-.footer-links ul {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-links a {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    color: var(--color-gold);
-    padding-left: 4px;
-}
-
-.footer-contact p {
-    font-size: 0.9rem;
-    opacity: 0.85;
-    margin-bottom: 12px;
-}
-
-.resp-tecnico {
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 0.75rem;
-    opacity: 0.6;
-}
-
 .footer-bottom {
     background-color: #12221a;
     padding: 24px 0;
@@ -1475,9 +1398,7 @@ h1, h2, h3, h4 {
         gap: 32px;
     }
 
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 }
 
 /* Celular (Menu Hambúrguer Ativo) */
@@ -1684,15 +1605,7 @@ h1, h2, h3, h4 {
         font-size: 1.05rem; /* Garante que cabe em uma linha em celulares menores */
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-    
-    .about-metrics {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+
     
     .footer-bottom-container {
         flex-direction: column;
