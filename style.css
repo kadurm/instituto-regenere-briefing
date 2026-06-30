@@ -1539,7 +1539,8 @@ h1, h2, h3, h4 {
     .therapy-card p,
     .team-desc,
     .faq-answer p,
-    .tech-highlight-content p {
+    .tech-highlight-content p,
+    .contact-desc {
         font-size: 0.9rem; /* Alinhado ao padrão do hero no mobile */
     }
 
@@ -1687,7 +1688,8 @@ h1, h2, h3, h4 {
     .therapy-card p,
     .team-desc,
     .faq-answer p,
-    .tech-highlight-content p {
+    .tech-highlight-content p,
+    .contact-desc {
         font-size: 0.8rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
@@ -1761,7 +1763,8 @@ h1, h2, h3, h4 {
     .therapy-card p,
     .team-desc,
     .faq-answer p,
-    .tech-highlight-content p {
+    .tech-highlight-content p,
+    .contact-desc {
         font-size: 0.75rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
