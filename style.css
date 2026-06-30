@@ -1474,10 +1474,14 @@ h1, h2, h3, h4 {
     .grid-2 { grid-template-columns: 1fr; }
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
     
+    .hero-section {
+        padding: 100px 0 50px; /* Reduzido o padding para diminuir o espaço no mobile */
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         gap: 56px;
-        padding-top: 40px;
+        padding-top: 15px; /* Reduzido para aproximar o texto da barra superior */
     }
     
     .hero-media {
