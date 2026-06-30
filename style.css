@@ -114,10 +114,7 @@ h1, h2, h3, h4 {
     margin-bottom: 16px;
 }
 
-.contact-info-text .section-title {
-    font-size: 1.7rem; /* Reduzido para caber em uma única linha no desktop grid */
-    white-space: nowrap; /* Garante que fique em uma única linha */
-}
+
 
 
 .section-subtitle {
@@ -1008,22 +1005,22 @@ h1, h2, h3, h4 {
 }
 
 .contact-grid-custom {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 48px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 .contact-info-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-desc {
     font-size: 1.1rem;
     opacity: 0.85;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 /* Card do Formulário */
@@ -1032,6 +1029,8 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-lg);
     padding: 48px;
     color: var(--color-text-dark);
+    width: 100%;
+    max-width: 640px;
 }
 
 .form-title {
@@ -1393,10 +1392,7 @@ h1, h2, h3, h4 {
         text-align: center;
     }
 
-    .contact-grid-custom {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
+
 
 
 }
@@ -1446,9 +1442,7 @@ h1, h2, h3, h4 {
         font-size: 1.05rem; /* Ajustado para padrão responsivo do hero */
     }
     
-    .contact-info-text .section-title {
-        font-size: 1.3rem; /* Reduzido para caber em uma única linha no tablet/celular */
-    }
+
     
     .hero-title {
         font-size: 1.5rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
@@ -1601,9 +1595,7 @@ h1, h2, h3, h4 {
         font-size: 0.75rem; /* Ajustado para manter a hierarquia abaixo do lead */
     }
     
-    .contact-info-text .section-title {
-        font-size: 1.05rem; /* Garante que cabe em uma linha em celulares menores */
-    }
+
 
 
     
@@ -1670,9 +1662,6 @@ h1, h2, h3, h4 {
         font-size: 0.7rem; /* Ajustado para manter a hierarquia abaixo do lead */
     }
     
-    .contact-info-text .section-title {
-        font-size: 0.85rem; /* Força caber em uma única linha em telas minúsculas */
-        letter-spacing: -0.5px;
-    }
+
 }
 
