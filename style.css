@@ -120,6 +120,7 @@ h1, h2, h3, h4 {
 
 .contact-info-text .section-title {
     font-size: 1.7rem; /* Reduzido para caber em uma única linha no desktop grid */
+    white-space: nowrap; /* Garante que fique em uma única linha */
 }
 
 
@@ -402,7 +403,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: 2.7rem; /* Reduzido para caber em exatamente 2 linhas */
+    font-size: 2.6rem; /* Reduzido para caber em exatamente 2 linhas */
     color: var(--color-primary-dark);
     margin-bottom: 20px;
 }
@@ -1518,11 +1519,11 @@ h1, h2, h3, h4 {
     }
     
     .contact-info-text .section-title {
-        font-size: 1.5rem; /* Reduzido para caber em uma única linha no tablet/celular */
+        font-size: 1.3rem; /* Reduzido para caber em uma única linha no tablet/celular */
     }
     
     .hero-title {
-        font-size: 1.8rem; /* Reduzido para caber em exatamente 2 linhas no mobile */
+        font-size: 1.7rem; /* Reduzido para caber em exatamente 2 linhas no mobile */
     }
     
     .hero-buttons {
@@ -1603,7 +1604,7 @@ h1, h2, h3, h4 {
 /* Celular Pequeno */
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 1.45rem; /* Reduzido para garantir 2 linhas em celulares menores */
+        font-size: 1.35rem; /* Reduzido para garantir 2 linhas em celulares menores */
     }
 
     .about-info .section-title {
@@ -1611,7 +1612,7 @@ h1, h2, h3, h4 {
     }
     
     .contact-info-text .section-title {
-        font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
+        font-size: 1.05rem; /* Garante que cabe em uma linha em celulares menores */
     }
 
     .footer-grid {
@@ -1633,7 +1634,7 @@ h1, h2, h3, h4 {
 /* Celular Muito Pequeno */
 @media (max-width: 380px) {
     .hero-title {
-        font-size: 1.25rem; /* Garante que cabe em exatamente 2 linhas em telas minúsculas */
+        font-size: 1.15rem; /* Garante que cabe em exatamente 2 linhas em telas minúsculas */
     }
 
     .about-info .section-title {
@@ -1642,7 +1643,7 @@ h1, h2, h3, h4 {
     }
     
     .contact-info-text .section-title {
-        font-size: 1.02rem; /* Força caber em uma única linha em telas minúsculas */
+        font-size: 0.85rem; /* Força caber em uma única linha em telas minúsculas */
         letter-spacing: -0.5px;
     }
 }
