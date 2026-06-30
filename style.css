@@ -109,13 +109,9 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Alinhado ao padrão do hero */
     color: var(--color-primary-dark);
     margin-bottom: 16px;
-}
-
-.about-info .section-title {
-    font-size: 2.2rem; /* Alinhado ao padrão do hero */
 }
 
 .contact-info-text .section-title {
@@ -725,13 +721,13 @@ h1, h2, h3, h4 {
 }
 
 .specialty-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.6rem; /* Ajustado para padrão premium */
     color: var(--color-primary-dark);
     margin-bottom: 12px;
 }
 
 .specialty-card p {
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Ajustado para padrão premium */
     color: var(--color-text-muted);
     flex-grow: 1;
     margin-bottom: 20px;
@@ -773,7 +769,7 @@ h1, h2, h3, h4 {
 }
 
 .therapy-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Ajustado para padrão premium */
     color: var(--color-primary-dark);
     margin-bottom: 16px;
 }
@@ -920,7 +916,7 @@ h1, h2, h3, h4 {
 }
 
 .team-info h3 {
-    font-size: 1.35rem;
+    font-size: 1.6rem; /* Ajustado para padrão premium */
     color: var(--color-primary-dark);
     margin-bottom: 4px;
 }
@@ -936,7 +932,7 @@ h1, h2, h3, h4 {
 }
 
 .team-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Ajustado para padrão premium */
     color: var(--color-text-muted);
     line-height: 1.6;
 }
@@ -1525,23 +1521,40 @@ h1, h2, h3, h4 {
     .grid-3 { grid-template-columns: 1fr; }
     
     .section-title {
-        font-size: 2.1rem;
+        font-size: 1.5rem; /* Alinhado ao padrão do hero no mobile */
     }
-    
-    .about-info .section-title {
-        font-size: 1.5rem; /* Reduzido para caber em uma única linha no tablet/celular */
+
+    .section-subtitle {
+        font-size: 0.9rem; /* Alinhado ao padrão do hero no mobile */
+    }
+
+    .section-tag {
+        font-size: 0.85rem; /* Alinhado ao padrão do hero no mobile */
     }
 
     .about-text-lead {
         font-size: 0.9rem; /* Ajustado para padrão do hero */
     }
 
-    .about-info .section-tag {
-        font-size: 0.9rem; /* Ajustado para padrão do hero */
-    }
-
     .about-info p {
         font-size: 0.85rem; /* Ajustado para manter a hierarquia abaixo do lead */
+    }
+    
+    .specialty-card h3,
+    .therapy-card h3,
+    .team-info h3 {
+        font-size: 1.5rem; /* Alinhado ao padrão do hero no mobile */
+    }
+
+    .specialty-card p,
+    .therapy-card p,
+    .team-desc,
+    .faq-answer p {
+        font-size: 0.9rem; /* Alinhado ao padrão do hero no mobile */
+    }
+
+    .faq-question {
+        font-size: 1.05rem; /* Ajustado para padrão responsivo do hero */
     }
     
     .contact-info-text .section-title {
@@ -1645,6 +1658,20 @@ h1, h2, h3, h4 {
 
 /* Celular Pequeno */
 @media (max-width: 576px) {
+    .section-title {
+        font-size: 1.25rem; /* Ajustado para padrão do hero */
+    }
+
+    .section-subtitle,
+    .about-text-lead {
+        font-size: 0.8rem; /* Ajustado para padrão do hero */
+    }
+
+    .section-tag,
+    .about-info .section-tag {
+        font-size: 0.8rem; /* Ajustado para padrão do hero */
+    }
+
     .hero-title {
         font-size: 1.25rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
     }
@@ -1657,24 +1684,23 @@ h1, h2, h3, h4 {
         font-size: 0.8rem; /* Mesmo tamanho do subtítulo */
     }
 
-    .highlight-card h3 {
+    .highlight-card h3,
+    .specialty-card h3,
+    .therapy-card h3,
+    .team-info h3 {
         font-size: 1.25rem; /* Ajustado para padrão de título do hero no mobile */
     }
     
-    .highlight-card p {
+    .highlight-card p,
+    .specialty-card p,
+    .therapy-card p,
+    .team-desc,
+    .faq-answer p {
         font-size: 0.8rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
-    .about-info .section-title {
-        font-size: 1.25rem; /* Ajustado para padrão do hero */
-    }
-
-    .about-text-lead {
-        font-size: 0.8rem; /* Ajustado para padrão do hero */
-    }
-
-    .about-info .section-tag {
-        font-size: 0.8rem; /* Ajustado para padrão do hero */
+    .faq-question {
+        font-size: 0.95rem; /* Ajustado para padrão responsivo do hero */
     }
 
     .about-info p {
@@ -1703,6 +1729,21 @@ h1, h2, h3, h4 {
 
 /* Celular Muito Pequeno */
 @media (max-width: 380px) {
+    .section-title {
+        font-size: 1.1rem; /* Ajustado para padrão do hero */
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle,
+    .about-text-lead {
+        font-size: 0.75rem; /* Ajustado para padrão do hero */
+    }
+
+    .section-tag,
+    .about-info .section-tag {
+        font-size: 0.75rem; /* Ajustado para padrão do hero */
+    }
+
     .hero-title {
         font-size: 1.1rem; /* Reduzido um pouco mais para caber perfeitamente no mobile */
     }
@@ -1715,25 +1756,23 @@ h1, h2, h3, h4 {
         font-size: 0.75rem; /* Mesmo tamanho do subtítulo */
     }
 
-    .highlight-card h3 {
+    .highlight-card h3,
+    .specialty-card h3,
+    .therapy-card h3,
+    .team-info h3 {
         font-size: 1.1rem; /* Ajustado para padrão de título do hero no mobile */
     }
     
-    .highlight-card p {
+    .highlight-card p,
+    .specialty-card p,
+    .therapy-card p,
+    .team-desc,
+    .faq-answer p {
         font-size: 0.75rem; /* Ajustado para padrão de subtítulo do hero no mobile */
     }
 
-    .about-info .section-title {
-        font-size: 1.1rem; /* Ajustado para padrão do hero */
-        letter-spacing: -0.5px;
-    }
-
-    .about-text-lead {
-        font-size: 0.75rem; /* Ajustado para padrão do hero */
-    }
-
-    .about-info .section-tag {
-        font-size: 0.75rem; /* Ajustado para padrão do hero */
+    .faq-question {
+        font-size: 0.88rem; /* Ajustado para padrão responsivo do hero */
     }
 
     .about-info p {
