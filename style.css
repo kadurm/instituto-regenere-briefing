@@ -114,6 +114,15 @@ h1, h2, h3, h4 {
     margin-bottom: 16px;
 }
 
+.about-info .section-title {
+    font-size: 2.1rem; /* Reduzido para caber em uma única linha no desktop */
+}
+
+.contact-info-text .section-title {
+    font-size: 1.7rem; /* Reduzido para caber em uma única linha no desktop grid */
+}
+
+
 .section-subtitle {
     font-size: 1.15rem;
     color: var(--color-text-muted);
@@ -393,7 +402,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: 3.4rem;
+    font-size: 2.7rem; /* Reduzido para caber em exatamente 2 linhas */
     color: var(--color-primary-dark);
     margin-bottom: 20px;
 }
@@ -1504,8 +1513,16 @@ h1, h2, h3, h4 {
         font-size: 2.1rem;
     }
     
+    .about-info .section-title {
+        font-size: 1.5rem; /* Reduzido para caber em uma única linha no tablet/celular */
+    }
+    
+    .contact-info-text .section-title {
+        font-size: 1.5rem; /* Reduzido para caber em uma única linha no tablet/celular */
+    }
+    
     .hero-title {
-        font-size: 2.4rem;
+        font-size: 1.8rem; /* Reduzido para caber em exatamente 2 linhas no mobile */
     }
     
     .hero-buttons {
@@ -1585,6 +1602,18 @@ h1, h2, h3, h4 {
 
 /* Celular Pequeno */
 @media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.45rem; /* Reduzido para garantir 2 linhas em celulares menores */
+    }
+
+    .about-info .section-title {
+        font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
+    }
+    
+    .contact-info-text .section-title {
+        font-size: 1.2rem; /* Garante que cabe em uma linha em celulares menores */
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 36px;
@@ -1600,3 +1629,21 @@ h1, h2, h3, h4 {
         text-align: center;
     }
 }
+
+/* Celular Muito Pequeno */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 1.25rem; /* Garante que cabe em exatamente 2 linhas em telas minúsculas */
+    }
+
+    .about-info .section-title {
+        font-size: 1.02rem; /* Força caber em uma única linha em telas minúsculas */
+        letter-spacing: -0.5px;
+    }
+    
+    .contact-info-text .section-title {
+        font-size: 1.02rem; /* Força caber em uma única linha em telas minúsculas */
+        letter-spacing: -0.5px;
+    }
+}
+
