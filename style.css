@@ -1541,11 +1541,11 @@ h1, h2, h3, h4 {
     }
     
     .hero-subtitle {
-        font-size: 1.0rem; /* Ajustado para dar melhor contraste com o título */
+        font-size: 0.9rem; /* Ajustado para dar melhor contraste com o título */
     }
 
     .hero-tag {
-        font-size: 1.0rem; /* Mesmo tamanho do subtítulo no mobile */
+        font-size: 0.9rem; /* Mesmo tamanho do subtítulo no mobile */
     }
     
     .hero-buttons {
@@ -1630,11 +1630,11 @@ h1, h2, h3, h4 {
     }
 
     .hero-subtitle {
-        font-size: 0.9rem; /* Ajustado para melhor hierarquia visual */
+        font-size: 0.8rem; /* Ajustado para melhor hierarquia visual e contraste */
     }
 
     .hero-tag {
-        font-size: 0.9rem; /* Mesmo tamanho do subtítulo */
+        font-size: 0.8rem; /* Mesmo tamanho do subtítulo */
     }
 
     .about-info .section-title {
@@ -1668,11 +1668,11 @@ h1, h2, h3, h4 {
     }
 
     .hero-subtitle {
-        font-size: 0.85rem; /* Ajustado para melhor hierarquia visual */
+        font-size: 0.75rem; /* Ajustado para melhor hierarquia visual e contraste */
     }
 
     .hero-tag {
-        font-size: 0.85rem; /* Mesmo tamanho do subtítulo */
+        font-size: 0.75rem; /* Mesmo tamanho do subtítulo */
     }
 
     .about-info .section-title {
