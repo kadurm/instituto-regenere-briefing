@@ -810,12 +810,13 @@ h1, h2, h3, h4 {
 
 .tech-highlight-content h4 {
     font-size: 1.6rem; /* Ajustado para padrão premium */
-    color: var(--color-gold);
+    color: var(--color-white);
     margin-bottom: 8px;
 }
 
 .tech-highlight-content p {
     font-size: 0.95rem; /* Ajustado para padrão premium */
+    color: var(--color-white);
     opacity: 0.9;
     line-height: 1.6;
 }
