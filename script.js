@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         escaras: {
             title: "Lesões por Pressão (Escaras)",
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10V6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4m10 0v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4M3 10h18M3 14h18M5 10v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" /></svg>`,
-            description: "Anteriormente conhecidas como escaras, estas lesões são causadas pela compressão prolongada da pele e tecidos sobre proeminências ósseas (como calcanhar, quadril e região sacral). É comum in idosos, cadeirantes, pacientes acamados ou sob cuidados intensivos, onde a fricção e falta de circulação local rompem as camadas da pele.",
+            description: "Anteriormente conhecidas como escaras, estas lesões são causadas pela compressão prolongada da pele e tecidos sobre proeminências ósseas (como calcanhar, quadril e região sacral). É comum em idosos, cadeirantes, pacientes acamados ou sob cuidados intensivos, onde a fricção e falta de circulação local rompem as camadas da pele.",
             treatment: "Combatemos ativamente a lesão utilizando curativos biológicos de última geração (hidrocoloides, hidrogéis com alginato) que promovem o desbridamento autolítico e o surgimento de tecido de granulação saudável. Associamos a Laserterapia para estimular a circulação profunda e cicatrização rápida, fornecendo treinamento prático aos cuidadores para reposicionamento e alívio de pressão."
         },
         cirurgica: {
