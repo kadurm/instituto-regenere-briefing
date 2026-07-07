@@ -902,6 +902,15 @@ h1, h2, h3, h4 {
     object-fit: cover;
 }
 
+.team-avatar.avatar-linda {
+    object-position: center 15%;
+}
+
+.team-avatar.avatar-junia {
+    object-position: center 10%;
+}
+
+
 .team-info h3 {
     font-size: 1.6rem; /* Ajustado para padrão premium */
     color: var(--color-primary-dark);
