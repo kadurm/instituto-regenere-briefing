@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const postDate = document.getElementById('insta-post-date');
         const postContainer = document.getElementById('instagram-post-container');
         
-        const defaultProfileUrl = "https://www.instagram.com/institutoregenere/"; 
+        const defaultProfileUrl = "https://www.instagram.com/institutoregeneremed?igsh=YzVoZzlka2N2czBp"; 
         
         if (BEHOLD_API_URL) {
             try {
