@@ -633,21 +633,201 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
-.about-img-container {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
+/* Mockup de iPhone Premium */
+.iphone-mockup {
     position: relative;
-    width: 90%;
-    aspect-ratio: 4/5;
+    width: 290px;
+    height: 590px;
+    background-color: #000;
+    border-radius: 44px;
+    border: 9px solid #1c1c1e;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 
+                0 0 0 2px #3a3a3c,
+                inset 0 0 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.about-img {
+.iphone-notch-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+    z-index: 10;
+    pointer-events: none;
+    background: transparent;
+}
+
+.iphone-dynamic-island {
+    width: 90px;
+    height: 24px;
+    background: #000;
+    border-radius: 12px;
+    margin: 8px auto 0;
+}
+
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 36px;
+    overflow-y: auto;
+    padding-top: 36px;
+    padding-bottom: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none; /* Firefox */
+}
+
+.iphone-screen::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.iphone-home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 105px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Instagram Post Estilizado */
+.instagram-post-card {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    text-align: left;
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #efefef;
+}
+
+.insta-profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 2px;
+    margin-right: 10px;
+}
+
+.insta-user-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.insta-username {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #262626;
+    line-height: 1.2;
+}
+
+.insta-location {
+    font-size: 0.65rem;
+    color: #8e8e8e;
+}
+
+.insta-more-btn {
+    background: none;
+    border: none;
+    color: #262626;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.insta-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.insta-post-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
+
+.instagram-post-card:hover .insta-post-img {
+    transform: scale(1.02);
+}
+
+.insta-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px 6px;
+}
+
+.insta-left-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.insta-icon {
+    width: 20px;
+    height: 20px;
+    color: #262626;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.insta-icon.like-icon {
+    color: #ed4956;
+    fill: #ed4956;
+}
+
+.insta-likes {
+    padding: 0 12px 4px;
+    font-size: 0.75rem;
+    color: #262626;
+}
+
+.insta-caption-area {
+    padding: 0 12px 6px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #262626;
+}
+
+.insta-caption-username {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.insta-date {
+    padding: 0 12px 12px;
+    font-size: 0.6rem;
+    color: #8e8e8e;
+    letter-spacing: 0.5px;
+}
+
 
 .floating-badge {
     position: absolute;

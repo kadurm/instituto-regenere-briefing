@@ -352,4 +352,67 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    /* ==========================================
+       Instagram Post Dinâmico
+       ========================================== */
+    async function loadLatestInstagramPost() {
+        // Para puxar de forma dinâmica real, insira sua URL do Behold.so abaixo.
+        // Exemplo: "https://api.behold.so/v2/user/sua-api-key"
+        const BEHOLD_API_URL = ""; 
+
+        const postImage = document.getElementById('insta-post-image');
+        const postCaption = document.getElementById('insta-post-caption');
+        const postDate = document.getElementById('insta-post-date');
+        const postContainer = document.getElementById('instagram-post-container');
+        
+        const defaultProfileUrl = "https://www.instagram.com/institutoregenere/"; 
+        
+        if (BEHOLD_API_URL) {
+            try {
+                const response = await fetch(BEHOLD_API_URL);
+                if (!response.ok) throw new Error("Erro ao consultar a API.");
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    const latestPost = data[0]; 
+                    
+                    if (postImage && (latestPost.mediaUrl || latestPost.thumbnailUrl)) {
+                        postImage.src = latestPost.mediaUrl || latestPost.thumbnailUrl;
+                    }
+                    
+                    if (postCaption && latestPost.caption) {
+                        postCaption.textContent = latestPost.caption;
+                    }
+                    
+                    if (postDate && latestPost.timestamp) {
+                        const date = new Date(latestPost.timestamp);
+                        const formattedDate = date.toLocaleDateString('pt-BR', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        }).toUpperCase();
+                        postDate.textContent = `PUBLICADO EM ${formattedDate}`;
+                    }
+                    
+                    if (postContainer && latestPost.permalink) {
+                        postContainer.addEventListener('click', () => {
+                            window.open(latestPost.permalink, '_blank');
+                        });
+                        return; 
+                    }
+                }
+            } catch (error) {
+                console.warn("Instagram widget: caindo no mock devido a erro na requisição:", error);
+            }
+        }
+        
+        if (postContainer) {
+            postContainer.addEventListener('click', () => {
+                window.open(defaultProfileUrl, '_blank');
+            });
+        }
+    }
+
+    loadLatestInstagramPost();
 });
